@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DTC7ZR7JVK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-DTC7ZR7JVK");
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phuket Budget Calculator - PHUKET TRAVEL 101</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Production CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebSite",
+            "@id": "https://phukettravel101.com/#website",
+            "url": "https://phukettravel101.com",
+            "name": "PHUKET TRAVEL 101",
+            "publisher": {
+                "@id": "https://phukettravel101.com/#organization"
+            }
+        },
+        {
+            "@type": "Organization",
+            "@id": "https://phukettravel101.com/#organization",
+            "name": "PHUKET TRAVEL 101",
+            "url": "https://phukettravel101.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://phukettravel101.com/images/favicon.svg"
+            }
+        },
+        {
+            "@type": "WebApplication",
+            "name": "Budget Calculator",
+            "url": "https://phukettravel101.com/budget-calculator.html",
+            "applicationCategory": "TravelApplication",
+            "operatingSystem": "All"
+        }
+    ]
+}
+    </script>
+</head>
+<body class="bg-white text-gray-900 selection:bg-black selection:text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-4">
+        <div class="max-w-7xl mx-auto glass border border-white/20 rounded-[2rem] md:rounded-full px-6 md:px-8 py-3 flex items-center justify-between shadow-xl shadow-black/5">
+            <a href="index.html" class="text-lg md:text-xl font-extrabold tracking-tighter hover:opacity-70 transition-opacity">PHUKET TRAVEL 101</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest">
+                <a href="index.html#tools" class="hover:text-blue-600 transition-colors">Tools</a>
+                <a href="blog.html" class="hover:text-blue-600 transition-colors">Guides</a>
+                <a href="beach-finder.html" class="hover:text-blue-600 transition-colors">Beaches</a>
+                <a href="about.html" class="hover:text-blue-600 transition-colors">About</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="blog.html" class="hidden sm:block bg-black text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gray-800 transition-all active:scale-95">Explore</a>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden p-2 hover:bg-black/5 rounded-xl transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-4 right-4 mt-2 glass border border-white/20 rounded-3xl p-6 shadow-2xl shadow-black/10 animate-fade-in">
+            <div class="flex flex-col gap-6 text-sm font-bold uppercase tracking-widest">
+                <a href="index.html#tools" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Tools</a>
+                <a href="blog.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Guides</a>
+                <a href="beach-finder.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Beaches</a>
+                <a href="about.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">About</a>
+                <a href="blog.html" class="bg-black text-white px-6 py-4 rounded-2xl text-center">Explore Phuket</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 md:px-6 pt-24 md:pt-32 pb-20">
+        <div class="max-w-5xl mx-auto bg-gray-900 text-white rounded-3xl shadow-2xl p-8 md:p-16">
+            <header class="mb-16 text-center">
+                <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4">Budget Calculator</h1>
+                <p class="text-gray-400 text-lg">Estimate your 2026 Phuket travel costs in real-time.</p>
+            </header>
+
+            <div class="flex flex-col lg:flex-row gap-16">
+                <!-- Controls -->
+                <div class="flex-1 space-y-12">
+                    <div>
+                        <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center">🏨</span> Hotel Vibe
+                        </h3>
+                        <input 
+                            type="range" id="hotel-tier" min="0" max="2" step="1" value="1"
+                            class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-blue-500"
+                        >
+                        <div class="flex justify-between mt-4 text-sm font-bold uppercase tracking-widest">
+                            <span id="hotel-label-0" class="text-gray-500 transition-colors">Backpacker</span>
+                            <span id="hotel-label-1" class="text-blue-400 transition-colors">Comfort</span>
+                            <span id="hotel-label-2" class="text-gray-500 transition-colors">Luxury</span>
+                        </div>
+                        <p id="hotel-desc" class="text-sm text-gray-400 mt-4 italic">3-4 Star Hotels & Boutique Stays</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center">🍜</span> Dining Style
+                        </h3>
+                        <input 
+                            type="range" id="dining-tier" min="0" max="2" step="1" value="1"
+                            class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-green-500"
+                        >
+                        <div class="flex justify-between mt-4 text-sm font-bold uppercase tracking-widest">
+                            <span id="dining-label-0" class="text-gray-500 transition-colors">Local</span>
+                            <span id="dining-label-1" class="text-green-400 transition-colors">Mixed</span>
+                            <span id="dining-label-2" class="text-gray-500 transition-colors">Fine</span>
+                        </div>
+                        <p id="dining-desc" class="text-sm text-gray-400 mt-4 italic">A mix of Street Food & Trendy Cafes</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center">🚤</span> Activities
+                        </h3>
+                        <input 
+                            type="range" id="activity-tier" min="0" max="2" step="1" value="1"
+                            class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-purple-500"
+                        >
+                        <div class="flex justify-between mt-4 text-sm font-bold uppercase tracking-widest">
+                            <span id="activity-label-0" class="text-gray-500 transition-colors">Chill</span>
+                            <span id="activity-label-1" class="text-purple-400 transition-colors">Explorer</span>
+                            <span id="activity-label-2" class="text-gray-500 transition-colors">VIP</span>
+                        </div>
+                        <p id="activity-desc" class="text-sm text-gray-400 mt-4 italic">Group Tours, Island Hopping & Massages</p>
+                    </div>
+                </div>
+
+                <!-- Results Card -->
+                <div class="w-full lg:w-96 bg-white/5 rounded-3xl p-8 flex flex-col items-center justify-center border border-white/10 shadow-2xl backdrop-blur-sm">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-4 block">Estimated Daily Cost</span>
+                    <div class="flex items-baseline gap-2 mb-10">
+                        <span id="currency-symbol" class="text-3xl font-bold text-gray-500">฿</span>
+                        <span id="total-amount" class="text-7xl font-black tabular-nums tracking-tighter">4,500</span>
+                    </div>
+
+                    <div class="w-full space-y-6">
+                        <div class="relative">
+                            <select id="currency-select" class="w-full bg-white/10 border border-white/10 rounded-2xl p-4 text-sm font-bold focus:ring-2 focus:ring-blue-500 outline-none appearance-none cursor-pointer transition-all">
+                                <option value="0" class="bg-gray-900">THB (฿) - Thai Baht</option>
+                                <option value="1" class="bg-gray-900">USD ($) - US Dollar</option>
+                                <option value="2" class="bg-gray-900">EUR (€) - Euro</option>
+                                <option value="3" class="bg-gray-900">GBP (£) - British Pound</option>
+                                <option value="4" class="bg-gray-900">AUD (A$) - Australian Dollar</option>
+                            </select>
+                            <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
+                            </div>
+                        </div>
+                        <p class="text-[10px] text-gray-500 text-center leading-relaxed italic">
+                            *Estimate includes accommodation (per person/double occupancy), 3 meals, and typical daily activities. Rates updated for 2026.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-24 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-16 mb-16">
+            <div class="md:col-span-2">
+                <a href="index.html" class="text-3xl font-black tracking-tighter mb-6 block">PHUKET TRAVEL 101</a>
+                <p class="text-gray-400 max-w-sm leading-relaxed">
+                    Helping you discover the authentic side of Thailand's most famous island since 2026.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-widest text-white/40 mb-6">Interactive Tools</h4>
+                <ul class="space-y-4 text-sm font-bold">
+                    <li><a href="beach-finder.html" class="hover:text-blue-500 transition-colors">Beach Finder</a></li>
+                    <li><a href="budget-calculator.html" class="hover:text-blue-500 transition-colors text-blue-500">Budget Calculator</a></li>
+                    <li><a href="visa-checker.html" class="hover:text-blue-500 transition-colors">Visa Checker</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-widest text-white/40 mb-6">Content</h4>
+                <ul class="space-y-4 text-sm font-bold">
+                    <li><a href="blog.html" class="hover:text-blue-500 transition-colors">Travel Guides</a></li>
+                    <li><a href="blog.html" class="hover:text-blue-500 transition-colors">Local Secrets</a></li>
+                    <li><a href="blog.html" class="hover:text-blue-500 transition-colors">Photography</a></li>
+                    <li><a href="about.html" class="hover:text-blue-500 transition-colors">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-bold uppercase tracking-widest text-white/30">
+            <p>&copy; 2026 PHUKET TRAVEL 101 • All Rights Reserved</p>
+            <div class="flex gap-8">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn?.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+            }
+        });
+
+        // Budget Calculator Logic
+        const currencies = [
+            { code: 'THB', symbol: '฿', rate: 1 },
+            { code: 'USD', symbol: '$', rate: 0.028 },
+            { code: 'EUR', symbol: '€', rate: 0.026 },
+            { code: 'GBP', symbol: '£', rate: 0.022 },
+            { code: 'AUD', symbol: 'A$', rate: 0.043 },
+        ];
+
+        const tiers = {
+            hotel: [
+                { label: 'Backpacker', description: 'Hostels & Basic Guesthouses', cost: 600 },
+                { label: 'Comfort', description: '3-4 Star Hotels & Boutique Stays', cost: 3500 },
+                { label: 'Luxury', description: '5-Star Resorts & Private Villas', cost: 12000 },
+            ],
+            dining: [
+                { label: 'Local', description: 'Street Food & Night Markets', cost: 400 },
+                { label: 'Mixed', description: 'A mix of Street Food & Trendy Cafes', cost: 1200 },
+                { label: 'Fine', description: 'Beach Clubs & Upscale Restaurants', cost: 4000 },
+            ],
+            activities: [
+                { label: 'Chill', description: 'Beaches, Viewpoints & Free Sights', cost: 200 },
+                { label: 'Explorer', description: 'Group Tours, Island Hopping & Massages', cost: 1800 },
+                { label: 'VIP', description: 'Private Yachts, Spas & VIP Shows', cost: 6000 },
+            ],
+        };
+
+        let hotelTier = 1;
+        let diningTier = 1;
+        let activityTier = 1;
+        let currencyIndex = 0;
+
+        const hotelInput = document.getElementById('hotel-tier');
+        const diningInput = document.getElementById('dining-tier');
+        const activityInput = document.getElementById('activity-tier');
+        const currencySelect = document.getElementById('currency-select');
+        
+        const totalAmount = document.getElementById('total-amount');
+        const currencySymbol = document.getElementById('currency-symbol');
+
+        function updateUI() {
+            // Update labels color
+            const tierColors = ['blue-400', 'green-400', 'purple-400'];
+            const inputs = [hotelTier, diningTier, activityTier];
+            const types = ['hotel', 'dining', 'activity'];
+
+            types.forEach((type, typeIdx) => {
+                for (let i = 0; i <= 2; i++) {
+                    const label = document.getElementById(`${type}-label-${i}`);
+                    if (inputs[typeIdx] === i) {
+                        label.className = `text-${tierColors[typeIdx]} transition-colors font-bold`;
+                    } else {
+                        label.className = 'text-gray-500 transition-colors';
+                    }
+                }
+            });
+
+            // Update descriptions
+            document.getElementById('hotel-desc').textContent = tiers.hotel[hotelTier].description;
+            document.getElementById('dining-desc').textContent = tiers.dining[diningTier].description;
+            document.getElementById('activity-desc').textContent = tiers.activities[activityTier].description;
+
+            // Calculate total
+            const dailyTotal = tiers.hotel[hotelTier].cost + tiers.dining[diningTier].cost + tiers.activities[activityTier].cost;
+            const currency = currencies[currencyIndex];
+            const converted = (dailyTotal * currency.rate).toLocaleString(undefined, {
+                minimumFractionDigits: currency.code === 'THB' ? 0 : 2,
+                maximumFractionDigits: currency.code === 'THB' ? 0 : 2,
+            });
+
+            totalAmount.textContent = converted;
+            currencySymbol.textContent = currency.symbol;
+
+            // Simple scale animation
+            totalAmount.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                totalAmount.style.transform = 'scale(1)';
+            }, 100);
+        }
+
+        hotelInput.addEventListener('input', (e) => {
+            hotelTier = parseInt(e.target.value);
+            updateUI();
+        });
+
+        diningInput.addEventListener('input', (e) => {
+            diningTier = parseInt(e.target.value);
+            updateUI();
+        });
+
+        activityInput.addEventListener('input', (e) => {
+            activityTier = parseInt(e.target.value);
+            updateUI();
+        });
+
+        currencySelect.addEventListener('change', (e) => {
+            currencyIndex = parseInt(e.target.value);
+            updateUI();
+        });
+
+        // Initial render
+        updateUI();
+    </script>
+</body>
+</html>

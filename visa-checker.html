@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DTC7ZR7JVK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-DTC7ZR7JVK");
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phuket Visa Checker - PHUKET TRAVEL 101</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Production CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebSite",
+            "@id": "https://phukettravel101.com/#website",
+            "url": "https://phukettravel101.com",
+            "name": "PHUKET TRAVEL 101",
+            "publisher": {
+                "@id": "https://phukettravel101.com/#organization"
+            }
+        },
+        {
+            "@type": "Organization",
+            "@id": "https://phukettravel101.com/#organization",
+            "name": "PHUKET TRAVEL 101",
+            "url": "https://phukettravel101.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://phukettravel101.com/images/favicon.svg"
+            }
+        },
+        {
+            "@type": "WebApplication",
+            "name": "Visa Checker",
+            "url": "https://phukettravel101.com/visa-checker.html",
+            "applicationCategory": "TravelApplication",
+            "operatingSystem": "All"
+        }
+    ]
+}
+    </script>
+</head>
+<body class="bg-white text-gray-900 selection:bg-black selection:text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-4">
+        <div class="max-w-7xl mx-auto glass border border-white/20 rounded-[2rem] md:rounded-full px-6 md:px-8 py-3 flex items-center justify-between shadow-xl shadow-black/5">
+            <a href="index.html" class="text-lg md:text-xl font-extrabold tracking-tighter hover:opacity-70 transition-opacity">PHUKET TRAVEL 101</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest">
+                <a href="index.html#tools" class="hover:text-blue-600 transition-colors">Tools</a>
+                <a href="blog.html" class="hover:text-blue-600 transition-colors">Guides</a>
+                <a href="beach-finder.html" class="hover:text-blue-600 transition-colors">Beaches</a>
+                <a href="about.html" class="hover:text-blue-600 transition-colors">About</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="blog.html" class="hidden sm:block bg-black text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gray-800 transition-all active:scale-95">Explore</a>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden p-2 hover:bg-black/5 rounded-xl transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-4 right-4 mt-2 glass border border-white/20 rounded-3xl p-6 shadow-2xl shadow-black/10 animate-fade-in">
+            <div class="flex flex-col gap-6 text-sm font-bold uppercase tracking-widest">
+                <a href="index.html#tools" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Tools</a>
+                <a href="blog.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Guides</a>
+                <a href="beach-finder.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Beaches</a>
+                <a href="about.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">About</a>
+                <a href="blog.html" class="bg-black text-white px-6 py-4 rounded-2xl text-center">Explore Phuket</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 md:px-6 pt-24 md:pt-32 pb-20 flex items-center justify-center min-h-[70vh]">
+        <div class="max-w-2xl w-full p-8 md:p-12 bg-gray-50 rounded-3xl border border-gray-100 shadow-sm">
+            <div class="max-w-xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4">Visa Checker</h1>
+                <p class="text-gray-500 mb-10 text-lg">Select your passport country to see 2026 entry requirements.</p>
+                
+                <div class="relative mb-10">
+                    <select 
+                        id="country-select"
+                        class="w-full p-5 bg-white border border-gray-200 rounded-2xl appearance-none cursor-pointer focus:ring-2 focus:ring-black outline-none font-medium text-lg transition-all"
+                    >
+                        <option value="">— Select your Country —</option>
+                        <!-- Options will be injected -->
+                    </select>
+                    <div class="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div id="result-container" class="hidden text-left">
+                    <!-- Result will be injected -->
+                </div>
+
+                <div id="no-result" class="hidden text-gray-400 italic text-sm animate-pulse">
+                    If your country isn't listed, you likely need to apply for a Tourist Visa at a Thai Embassy.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-24 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-16 mb-16">
+            <div class="md:col-span-2">
+                <a href="index.html" class="text-3xl font-black tracking-tighter mb-6 block">PHUKET TRAVEL 101</a>
+                <p class="text-gray-400 max-w-sm leading-relaxed">
+                    Helping you discover the authentic side of Thailand's most famous island since 2026.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-widest text-white/40 mb-6">Interactive Tools</h4>
+                <ul class="space-y-4 text-sm font-bold">
+                    <li><a href="beach-finder.html" class="hover:text-blue-500 transition-colors">Beach Finder</a></li>
+                    <li><a href="budget-calculator.html" class="hover:text-blue-500 transition-colors">Budget Calculator</a></li>
+                    <li><a href="visa-checker.html" class="hover:text-blue-500 transition-colors text-blue-500">Visa Checker</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-widest text-white/40 mb-6">Content</h4>
+                <ul class="space-y-4 text-sm font-bold">
+                    <li><a href="blog.html" class="hover:text-blue-500 transition-colors">Travel Guides</a></li>
+                    <li><a href="blog.html" class="hover:text-blue-500 transition-colors">Local Secrets</a></li>
+                    <li><a href="blog.html" class="hover:text-blue-500 transition-colors">Photography</a></li>
+                    <li><a href="about.html" class="hover:text-blue-500 transition-colors">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-bold uppercase tracking-widest text-white/30">
+            <p>&copy; 2026 PHUKET TRAVEL 101 • All Rights Reserved</p>
+            <div class="flex gap-8">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn?.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+            }
+        });
+
+        // Visa Checker Logic
+        const visaData = [
+            { country: "United States", status: "Visa Exempt", duration: "60 Days", forms: ["TDAC (Mandatory)"] },
+            { country: "United Kingdom", status: "Visa Exempt", duration: "60 Days", forms: ["TDAC (Mandatory)"] },
+            { country: "Australia", status: "Visa Exempt", duration: "60 Days", forms: ["TDAC (Mandatory)"] },
+            { country: "Canada", status: "Visa Exempt", duration: "60 Days", forms: ["TDAC (Mandatory)"] },
+            { country: "Germany", status: "Visa Exempt", duration: "60 Days", forms: ["TDAC (Mandatory)"] },
+            { country: "France", status: "Visa Exempt", duration: "60 Days", forms: ["TDAC (Mandatory)"] },
+            { country: "China", status: "Visa Exempt", duration: "60 Days", forms: ["TDAC (Mandatory)"] },
+            { country: "India", status: "Visa Exempt", duration: "60 Days", forms: ["TDAC (Mandatory)"] },
+            { country: "Russia", status: "Visa Exempt", duration: "60 Days", forms: ["TDAC (Mandatory)"] },
+            { country: "Singapore", status: "Visa Exempt", duration: "60 Days", forms: ["TDAC (Mandatory)"] },
+            { country: "South Korea", status: "Visa Exempt", duration: "90 Days", forms: ["TDAC (Mandatory)"] },
+            { country: "Brazil", status: "Visa Exempt", duration: "90 Days", forms: ["TDAC (Mandatory)"] },
+            { country: "United Arab Emirates", status: "Visa Exempt", duration: "60 Days", forms: ["TDAC (Mandatory)"] },
+            { country: "South Africa", status: "Visa Exempt", duration: "60 Days", forms: ["TDAC (Mandatory)"] },
+            { country: "Israel", status: "Visa Exempt", duration: "60 Days", forms: ["TDAC (Mandatory)"] },
+            { country: "Mexico", status: "Visa Exempt", duration: "60 Days", forms: ["TDAC (Mandatory)"] },
+            { country: "Taiwan", status: "Visa Exempt", duration: "60 Days", forms: ["TDAC (Mandatory)"] },
+            { country: "Kazakhstan", status: "Visa Exempt", duration: "60 Days", forms: ["TDAC (Mandatory)"] },
+        ];
+
+        const countrySelect = document.getElementById('country-select');
+        const resultContainer = document.getElementById('result-container');
+        const noResult = document.getElementById('no-result');
+
+        // Populate options
+        visaData.sort((a, b) => a.country.localeCompare(b.country)).forEach(d => {
+            const option = document.createElement('option');
+            option.value = d.country;
+            option.textContent = d.country;
+            countrySelect.appendChild(option);
+        });
+
+        countrySelect.addEventListener('change', (e) => {
+            const selectedCountry = e.target.value;
+            const result = visaData.find(d => d.country === selectedCountry);
+
+            if (result) {
+                resultContainer.innerHTML = `
+                    <div class="bg-white p-8 rounded-2xl border border-green-100 shadow-xl shadow-green-900/5 transform transition-all scale-100 opacity-100">
+                        <div class="flex items-center gap-5 mb-6">
+                            <div class="w-14 h-14 bg-green-50 rounded-full flex items-center justify-center text-3xl">
+                                ✅
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl">${result.status}</h4>
+                                <p class="text-sm text-green-600 font-medium tracking-tight uppercase">Up to ${result.duration}</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="p-5 bg-gray-50 rounded-xl border border-gray-100">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400 block mb-2">Required Forms</span>
+                                <p class="font-bold text-base text-gray-800 leading-tight">Thailand Digital Arrival Card (TDAC)</p>
+                                <p class="text-xs text-gray-500 mt-2 italic">Must be submitted 72 hours before arrival.</p>
+                            </div>
+
+                            <a 
+                                href="https://tdac.immigration.go.th" 
+                                target="_blank"
+                                class="block w-full py-4 bg-black text-white text-center rounded-xl font-bold text-base hover:bg-gray-800 transition-all hover:shadow-lg active:scale-95"
+                            >
+                                Go to Official TDAC Portal
+                            </a>
+                        </div>
+
+                        <div class="mt-8 pt-8 border-t border-gray-100 space-y-3">
+                            <p class="text-[11px] text-gray-400 leading-relaxed">
+                                • Passport must be valid for at least 6 months.<br />
+                                • Proof of onward travel (ticket out of Thailand) required.<br />
+                                • Proof of funds (10,000 THB/person) may be requested.
+                            </p>
+                        </div>
+                    </div>
+                `;
+                resultContainer.classList.remove('hidden');
+                noResult.classList.add('hidden');
+            } else {
+                resultContainer.classList.add('hidden');
+                if (selectedCountry) {
+                    noResult.classList.remove('hidden');
+                } else {
+                    noResult.classList.add('hidden');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

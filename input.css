@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
+  --aspect-4/5: 4 / 5;
+  --aspect-video: 16 / 9;
+}
+
+@layer base {
+  body {
+    @apply selection:bg-black selection:text-white;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+  }
+}

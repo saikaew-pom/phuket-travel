@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DTC7ZR7JVK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-DTC7ZR7JVK");
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phuket Travel Guides - PHUKET TRAVEL 101</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Production CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebSite",
+            "@id": "https://phukettravel101.com/#website",
+            "url": "https://phukettravel101.com",
+            "name": "PHUKET TRAVEL 101",
+            "publisher": {
+                "@id": "https://phukettravel101.com/#organization"
+            }
+        },
+        {
+            "@type": "Organization",
+            "@id": "https://phukettravel101.com/#organization",
+            "name": "PHUKET TRAVEL 101",
+            "url": "https://phukettravel101.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://phukettravel101.com/images/favicon.svg"
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body class="bg-white text-gray-900 selection:bg-black selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-4">
+        <div class="max-w-7xl mx-auto glass border border-white/20 rounded-[2rem] md:rounded-full px-6 md:px-8 py-3 flex items-center justify-between shadow-xl shadow-black/5">
+            <a href="index.html" class="text-lg md:text-xl font-extrabold tracking-tighter hover:opacity-70 transition-opacity">PHUKET TRAVEL 101</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest">
+                <a href="index.html#tools" class="hover:text-blue-600 transition-colors">Tools</a>
+                <a href="blog.html" class="hover:text-blue-600 transition-colors">Guides</a>
+                <a href="beach-finder.html" class="hover:text-blue-600 transition-colors">Beaches</a>
+                <a href="about.html" class="hover:text-blue-600 transition-colors">About</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="blog.html" class="hidden sm:block bg-black text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gray-800 transition-all active:scale-95">Explore</a>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden p-2 hover:bg-black/5 rounded-xl transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-4 right-4 mt-2 glass border border-white/20 rounded-3xl p-6 shadow-2xl shadow-black/10 animate-fade-in">
+            <div class="flex flex-col gap-6 text-sm font-bold uppercase tracking-widest">
+                <a href="index.html#tools" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Tools</a>
+                <a href="blog.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Guides</a>
+                <a href="beach-finder.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Beaches</a>
+                <a href="about.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">About</a>
+                <a href="blog.html" class="bg-black text-white px-6 py-4 rounded-2xl text-center">Explore Phuket</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 md:px-6 pt-24 md:pt-32 pb-20">
+        <header class="mb-16">
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-4">Phuket Insights</h1>
+            <p class="text-xl text-gray-500 max-w-2xl font-medium">Expert guides, local secrets, and everything you need for your 2026 Phuket adventure.</p>
+        </header>
+
+        <div class="flex flex-col lg:flex-row gap-12">
+            
+            <!-- Sidebar / Categories -->
+            <aside class="w-full lg:w-64 shrink-0">
+                <div class="sticky top-28 space-y-10">
+                    <div>
+                        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-6">Search Guides</h3>
+                        <div class="relative">
+                            <input type="text" id="blog-search" placeholder="Find a guide..." class="w-full bg-white border border-gray-200 rounded-2xl px-5 py-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                            <div class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-6">Categories</h3>
+                        <nav class="flex flex-wrap lg:flex-col gap-2">
+                            <button onclick="filterCategory('all')" class="category-btn active px-4 py-2 rounded-xl text-sm font-bold text-left transition-all bg-black text-white">All Guides</button>
+                            <button onclick="filterCategory('Beach Guide')" class="category-btn px-4 py-2 rounded-xl text-sm font-bold text-left transition-all hover:bg-gray-200 text-gray-600">Beach Guides</button>
+                            <button onclick="filterCategory('Travel Tips')" class="category-btn px-4 py-2 rounded-xl text-sm font-bold text-left transition-all hover:bg-gray-200 text-gray-600">Travel Tips</button>
+                            <button onclick="filterCategory('Budgeting')" class="category-btn px-4 py-2 rounded-xl text-sm font-bold text-left transition-all hover:bg-gray-200 text-gray-600">Budgeting</button>
+                            <button onclick="filterCategory('Local Culture')" class="category-btn px-4 py-2 rounded-xl text-sm font-bold text-left transition-all hover:bg-gray-200 text-gray-600">Local Culture</button>
+                        </nav>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Blog Grid -->
+            <div class="flex-1">
+                <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Blogs will be injected here -->
+                </div>
+                
+                <div id="no-blogs" class="hidden py-20 text-center bg-white rounded-3xl border-2 border-dashed border-gray-200">
+                    <span class="text-4xl block mb-4">🕵️‍♂️</span>
+                    <h3 class="text-xl font-bold">No guides found</h3>
+                    <p class="text-gray-500 mt-2">Try a different search term or category.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-24 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-16 mb-16">
+            <div class="md:col-span-2">
+                <a href="index.html" class="text-3xl font-black tracking-tighter mb-6 block">PHUKET TRAVEL 101</a>
+                <p class="text-gray-400 max-w-sm leading-relaxed">
+                    Helping you discover the authentic side of Thailand's most famous island since 2026.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-widest text-white/40 mb-6">Interactive Tools</h4>
+                <ul class="space-y-4 text-sm font-bold">
+                    <li><a href="beach-finder.html" class="hover:text-blue-500 transition-colors">Beach Finder</a></li>
+                    <li><a href="budget-calculator.html" class="hover:text-blue-500 transition-colors">Budget Calculator</a></li>
+                    <li><a href="visa-checker.html" class="hover:text-blue-500 transition-colors">Visa Checker</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-widest text-white/40 mb-6">Content</h4>
+                <ul class="space-y-4 text-sm font-bold">
+                    <li><a href="blog.html" class="hover:text-blue-500 transition-colors">Travel Guides</a></li>
+                    <li><a href="blog.html" class="hover:text-blue-500 transition-colors">Local Secrets</a></li>
+                    <li><a href="blog.html" class="hover:text-blue-500 transition-colors">Photography</a></li>
+                    <li><a href="about.html" class="hover:text-blue-500 transition-colors">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-bold uppercase tracking-widest text-white/30">
+            <p>&copy; 2026 PHUKET TRAVEL 101 • All Rights Reserved</p>
+            <div class="flex gap-8">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn?.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (menuBtn && !menuBtn.contains(e.target) && mobileMenu && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+            }
+        });
+
+        // Blog Logic
+        const blogs = [
+            { title: "Grab vs. InDrive vs. Bolt: Which Ride-Hailing App is Best in Phuket?", description: "Which ride-hailing app should you use in Phuket? We compare Grab, Bolt, and InDrive on price, wait times, and reliability for 2026.", image: "images/guide-ride-hailing.png", category: "Transport & Tech", url: "grab-vs-bolt-indrive-guide.html" },
+            { title: "Phuket Airport Transfer Guide 2026: Prices & Scams", description: "The most comprehensive guide to navigating HKT arrivals. Compare prices for buses, Grab, and private vans with our interactive fare estimator. Learn to spot the travel agency trap.", image: "images/guide-airport-transfer.png", category: "Travel Logistics", url: "airport-transfer-guide.html" },
+            { title: "Tipping in Phuket: The Ultimate Etiquette Guide for 2026", description: "Master the art of tipping in Phuket for 2026. From massage therapists to Grab drivers, learn exactly how much to tip with our downloadable cheat sheet.", image: "images/guide-tipping.png", category: "Local Etiquette", url: "tipping-guide.html" },
+            { title: "Exchanging Money in Phuket: Best Rates & The Airport Trap", description: "Discover where to get the best currency exchange rates in Phuket for 2026. Learn why you should avoid airport kiosks and use our interactive SuperRich map.", image: "images/guide-money-exchange.png", category: "Travel Tips", url: "money-exchange-guide.html" },
+            { title: "Bang Tao Beach Guide: Luxury & Serenity", description: "Explore Phuket's longest beach and home to the Laguna resort complex.", image: "images/beach-bang-tao.png", category: "Beach Guide", url: "bang-tao-beach-guide.html" },
+            { title: "Ethical Guide to Elephant Sanctuaries", description: "Learn how to choose a truly ethical elephant sanctuary in Phuket.", image: "images/guide-elephants.png", category: "Local Culture", url: "elephant-sanctuaries.html" },
+            { title: "5 Hidden Coves in Phuket", description: "Escape the crowds and discover Phuket's best-kept secrets.", image: "images/hidden-cove.png", category: "Beach Guide", url: "hidden-coves.html" },
+            { title: "Kata Beach: Family Destination", description: "Discover why Kata Beach is the perfect balance of surf and sand.", image: "images/beach-kata.png", category: "Beach Guide", url: "kata-beach-guide.html" },
+            { title: "Mai Khao: The Quietest Beach", description: "Escape to Phuket's northern frontier. 11km of untouched sand.", image: "images/beach-mai-khao.jpg", category: "Beach Guide", url: "mai-khao-beach-guide.html" },
+            { title: "Nai Harn: The Local Favorite", description: "Discover Phuket's most pristine and beloved southern beach.", image: "images/beach-nai-harn.png", category: "Beach Guide", url: "nai-harn-beach-guide.html" },
+            { title: "Phuket Old Town's Best Cafes", description: "A local's guide to the hidden gem cafes in Old Town.", image: "images/guide-old-town-cafes.png", category: "Local Culture", url: "old-town-cafes.html" },
+            { title: "Ultimate Patong Beach Guide", description: "A comprehensive deep dive into Phuket's most famous beach.", image: "images/beach-patong.png", category: "Beach Guide", url: "patong-beach-guide.html" },
+            { title: "Phuket Trip Costs in 2026", description: "Plan your 2026 Phuket adventure with our budget guide.", image: "images/tool-budget-calc.png", category: "Budgeting", url: "phuket-cost-guide-2026.html" },
+            { title: "Phuket Entry Guide 2026", description: "Everything you need to navigate Phuket International Airport.", image: "images/tool-visa-checker.png", category: "Travel Tips", url: "phuket-entry-guide-2026.html" },
+            { title: "Surin Beach: Natural Elegance", description: "Discover its crystal clear waters and sophisticated charm.", image: "images/beach-surin.png", category: "Beach Guide", url: "surin-beach-guide.html" }
+        ];
+
+        let activeCategory = 'all';
+        let searchQuery = '';
+
+        const grid = document.getElementById('blog-grid');
+        const noBlogs = document.getElementById('no-blogs');
+        const searchInput = document.getElementById('blog-search');
+
+        function renderBlogs() {
+            const filtered = blogs.filter(blog => {
+                const matchesCategory = activeCategory === 'all' || blog.category === activeCategory;
+                const matchesSearch = blog.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                    blog.description.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesCategory && matchesSearch;
+            });
+
+            grid.innerHTML = '';
+            
+            if (filtered.length === 0) {
+                grid.classList.add('hidden');
+                noBlogs.classList.remove('hidden');
+            } else {
+                grid.classList.remove('hidden');
+                noBlogs.classList.add('hidden');
+                
+                filtered.forEach(blog => {
+                    const card = document.createElement('a');
+                    card.href = blog.url;
+                    card.className = "group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500";
+                    card.innerHTML = `
+                        <div class="aspect-video overflow-hidden">
+                            <img src="${blog.image}" alt="${blog.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="800" height="450" loading="lazy">
+                        </div>
+                        <div class="p-8">
+                            <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest block mb-3">${blog.category}</span>
+                            <h3 class="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors leading-tight">${blog.title}</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed line-clamp-2">${blog.description}</p>
+                            <div class="mt-6 pt-6 border-t border-gray-50 flex items-center justify-between">
+                                <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Read Guide</span>
+                                <span class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-colors">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                                </span>
+                            </div>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+        }
+
+        function filterCategory(cat) {
+            activeCategory = cat;
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                if (btn.textContent.includes(cat) || (cat === 'all' && btn.textContent === 'All Guides')) {
+                    btn.classList.add('bg-black', 'text-white');
+                    btn.classList.remove('text-gray-600', 'hover:bg-gray-200');
+                } else {
+                    btn.classList.remove('bg-black', 'text-white');
+                    btn.classList.add('text-gray-600', 'hover:bg-gray-200');
+                }
+            });
+            renderBlogs();
+        }
+
+        searchInput.oninput = (e) => {
+            searchQuery = e.target.value;
+            renderBlogs();
+        };
+
+        // Initial render
+        renderBlogs();
+    </script>
+</body>
+</html>

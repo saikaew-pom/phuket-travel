@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DTC7ZR7JVK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-DTC7ZR7JVK");
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phuket Beach Finder - PHUKET TRAVEL 101</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Production CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebSite",
+            "@id": "https://phukettravel101.com/#website",
+            "url": "https://phukettravel101.com",
+            "name": "PHUKET TRAVEL 101",
+            "publisher": {
+                "@id": "https://phukettravel101.com/#organization"
+            }
+        },
+        {
+            "@type": "Organization",
+            "@id": "https://phukettravel101.com/#organization",
+            "name": "PHUKET TRAVEL 101",
+            "url": "https://phukettravel101.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://phukettravel101.com/images/favicon.svg"
+            }
+        },
+        {
+            "@type": "WebApplication",
+            "name": "Beach Finder",
+            "url": "https://phukettravel101.com/beach-finder.html",
+            "applicationCategory": "TravelApplication",
+            "operatingSystem": "All"
+        }
+    ]
+}
+    </script>
+</head>
+<body class="bg-white text-gray-900 selection:bg-black selection:text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-4">
+        <div class="max-w-7xl mx-auto glass border border-white/20 rounded-[2rem] md:rounded-full px-6 md:px-8 py-3 flex items-center justify-between shadow-xl shadow-black/5">
+            <a href="index.html" class="text-lg md:text-xl font-extrabold tracking-tighter hover:opacity-70 transition-opacity">PHUKET TRAVEL 101</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest">
+                <a href="index.html#tools" class="hover:text-blue-600 transition-colors">Tools</a>
+                <a href="blog.html" class="hover:text-blue-600 transition-colors">Guides</a>
+                <a href="beach-finder.html" class="hover:text-blue-600 transition-colors">Beaches</a>
+                <a href="about.html" class="hover:text-blue-600 transition-colors">About</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="blog.html" class="hidden sm:block bg-black text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gray-800 transition-all active:scale-95">Explore</a>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden p-2 hover:bg-black/5 rounded-xl transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-4 right-4 mt-2 glass border border-white/20 rounded-3xl p-6 shadow-2xl shadow-black/10 animate-fade-in">
+            <div class="flex flex-col gap-6 text-sm font-bold uppercase tracking-widest">
+                <a href="index.html#tools" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Tools</a>
+                <a href="blog.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Guides</a>
+                <a href="beach-finder.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Beaches</a>
+                <a href="about.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">About</a>
+                <a href="blog.html" class="bg-black text-white px-6 py-4 rounded-2xl text-center">Explore Phuket</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 md:px-6 pt-24 md:pt-32 pb-20">
+        <header class="mb-12">
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-2">Phuket Beach Finder</h1>
+            <p class="text-gray-500 text-lg">Discover your perfect spot on the island.</p>
+        </header>
+
+        <div class="flex flex-col lg:flex-row gap-12">
+            <!-- Sidebar - Filters -->
+            <aside class="w-full lg:w-64 flex-shrink-0">
+                <div class="sticky top-28 space-y-8">
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-sm font-bold uppercase tracking-widest text-gray-400">Filter by Vibe</h3>
+                            <button id="clear-vibes" class="hidden text-[10px] font-bold text-gray-400 hover:text-black uppercase tracking-tighter transition-colors">
+                                Clear All
+                            </button>
+                        </div>
+                        <div id="vibe-filters" class="flex flex-wrap lg:flex-col gap-3">
+                            <!-- Vibe buttons will be injected here -->
+                        </div>
+                    </div>
+
+                    <div class="pt-8 border-t border-gray-100">
+                        <h3 class="text-sm font-bold uppercase tracking-widest text-gray-400 mb-6">Activities</h3>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input type="checkbox" id="snorkeling-filter" class="hidden">
+                            <div id="snorkeling-checkbox" class="w-6 h-6 border-2 rounded-md transition-all flex items-center justify-center border-gray-200 group-hover:border-black">
+                                <svg id="snorkeling-icon" class="hidden w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <span id="snorkeling-label" class="text-sm font-medium transition-colors text-gray-700 group-hover:text-black">
+                                Snorkeling available
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content - Grid -->
+            <div class="flex-1">
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-2xl font-bold tracking-tight">
+                        Showing <span id="results-count" class="text-gray-400 font-medium">0</span> results
+                    </h2>
+                </div>
+
+                <div id="beach-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                    <!-- Beach cards will be injected here -->
+                </div>
+
+                <div id="no-results" class="hidden text-center py-32 bg-gray-50 rounded-3xl border-2 border-dashed border-gray-200">
+                    <div class="text-4xl mb-4">🏖️</div>
+                    <h3 class="text-xl font-bold">No beaches found</h3>
+                    <p class="text-gray-500 mt-2">Try adjusting your filters to find your perfect spot.</p>
+                    <button id="reset-filters" class="mt-6 px-6 py-2 bg-black text-white rounded-full font-bold text-sm hover:bg-gray-800 transition-colors">
+                        Reset All Filters
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-24 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-16 mb-16">
+            <div class="md:col-span-2">
+                <a href="index.html" class="text-3xl font-black tracking-tighter mb-6 block">PHUKET TRAVEL 101</a>
+                <p class="text-gray-400 max-w-sm leading-relaxed">
+                    Helping you discover the authentic side of Thailand's most famous island since 2026.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-widest text-white/40 mb-6">Interactive Tools</h4>
+                <ul class="space-y-4 text-sm font-bold">
+                    <li><a href="beach-finder.html" class="hover:text-blue-500 transition-colors">Beach Finder</a></li>
+                    <li><a href="budget-calculator.html" class="hover:text-blue-500 transition-colors">Budget Calculator</a></li>
+                    <li><a href="visa-checker.html" class="hover:text-blue-500 transition-colors">Visa Checker</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-widest text-white/40 mb-6">Content</h4>
+                <ul class="space-y-4 text-sm font-bold">
+                    <li><a href="blog.html" class="hover:text-blue-500 transition-colors">Travel Guides</a></li>
+                    <li><a href="blog.html" class="hover:text-blue-500 transition-colors">Local Secrets</a></li>
+                    <li><a href="blog.html" class="hover:text-blue-500 transition-colors">Photography</a></li>
+                    <li><a href="about.html" class="hover:text-blue-500 transition-colors">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-bold uppercase tracking-widest text-white/30">
+            <p>&copy; 2026 PHUKET TRAVEL 101 • All Rights Reserved</p>
+            <div class="flex gap-8">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Script
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn?.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (menuBtn && !menuBtn.contains(e.target) && mobileMenu && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+            }
+        });
+
+        // Beach Finder Logic
+        const beachesData = [
+            {
+                id: 'patong',
+                name: 'Patong Beach',
+                description: 'The most famous and lively beach in Phuket, known for its vibrant nightlife, water sports, and endless shopping.',
+                imageUrl: 'images/beach-patong.png',
+                vibe: ['Party', 'Lively', 'Crowded'],
+                sandQuality: 3,
+                hasSnorkeling: false,
+                slug: 'patong-beach-guide',
+                width: 600,
+                height: 750
+            },
+            {
+                id: 'kata',
+                name: 'Kata Beach',
+                description: 'A beautiful crescent of white sand, popular with families and surfers, offering a great balance of amenities and scenery.',
+                imageUrl: 'images/beach-kata.png',
+                vibe: ['Family', 'Surfing', 'Relaxed'],
+                sandQuality: 4,
+                hasSnorkeling: true,
+                slug: 'kata-beach-guide',
+                width: 600,
+                height: 750
+            },
+            {
+                id: 'bang-tao',
+                name: 'Bang Tao Beach',
+                description: 'One of the longest beaches on the island, home to the luxury Laguna Phuket complex and upscale beach clubs.',
+                imageUrl: 'images/beach-bang-tao.png',
+                vibe: ['Luxury', 'Quiet', 'Spacious'],
+                sandQuality: 4,
+                hasSnorkeling: false,
+                slug: 'bang-tao-beach-guide',
+                width: 600,
+                height: 750
+            },
+            {
+                id: 'nai-harn',
+                name: 'Nai Harn Beach',
+                description: 'A local favorite in the south, nestled between green hills and offering clear waters perfect for swimming.',
+                imageUrl: 'images/beach-nai-harn.png',
+                vibe: ['Quiet', 'Local', 'Scenic'],
+                sandQuality: 5,
+                hasSnorkeling: true,
+                slug: 'nai-harn-beach-guide',
+                width: 600,
+                height: 750
+            },
+            {
+                id: 'surin',
+                name: 'Surin Beach',
+                description: 'Known for its crystal clear turquoise waters and naturally beautiful setting, once a hub for high-end beach clubs.',
+                imageUrl: 'images/beach-surin.png',
+                vibe: ['Luxury', 'Sunset', 'Natural'],
+                sandQuality: 5,
+                hasSnorkeling: true,
+                slug: 'surin-beach-guide',
+                width: 600,
+                height: 750
+            },
+            {
+                id: 'mai-khao',
+                name: 'Mai Khao Beach',
+                description: 'The longest beach in Phuket, part of a national park, where you can walk for miles in near-complete solitude.',
+                imageUrl: 'images/beach-mai-khao.jpg',
+                vibe: ['Quiet', 'Isolated', 'Nature'],
+                sandQuality: 3,
+                hasSnorkeling: false,
+                slug: 'mai-khao-beach-guide',
+                width: 600,
+                height: 750
+            },
+        ];
+
+        const vibes = ['Party', 'Family', 'Quiet', 'Luxury', 'Surfing', 'Nature'];
+        let selectedVibes = [];
+        let showOnlySnorkeling = false;
+
+        const vibeFiltersContainer = document.getElementById('vibe-filters');
+        const beachGrid = document.getElementById('beach-grid');
+        const resultsCount = document.getElementById('results-count');
+        const clearVibesBtn = document.getElementById('clear-vibes');
+        const snorkelingFilter = document.getElementById('snorkeling-filter');
+        const snorkelingCheckbox = document.getElementById('snorkeling-checkbox');
+        const snorkelingIcon = document.getElementById('snorkeling-icon');
+        const snorkelingLabel = document.getElementById('snorkeling-label');
+        const noResults = document.getElementById('no-results');
+        const resetFiltersBtn = document.getElementById('reset-filters');
+
+        function renderVibeFilters() {
+            vibeFiltersContainer.innerHTML = '';
+            vibes.forEach(vibe => {
+                const isActive = selectedVibes.includes(vibe);
+                const button = document.createElement('button');
+                button.textContent = vibe;
+                button.className = `px-4 py-2 text-sm font-bold border rounded-full transition-all text-left ${
+                    isActive 
+                    ? 'border-black bg-black text-white shadow-lg shadow-black/10' 
+                    : 'border-gray-200 text-gray-600 hover:border-black hover:text-black'
+                }`;
+                button.onclick = () => toggleVibe(vibe);
+                vibeFiltersContainer.appendChild(button);
+            });
+
+            if (selectedVibes.length > 0) {
+                clearVibesBtn.classList.remove('hidden');
+            } else {
+                clearVibesBtn.classList.add('hidden');
+            }
+        }
+
+        function toggleVibe(vibe) {
+            if (selectedVibes.includes(vibe)) {
+                selectedVibes = selectedVibes.filter(v => v !== vibe);
+            } else {
+                selectedVibes.push(vibe);
+            }
+            render();
+        }
+
+        function renderBeaches() {
+            const filtered = beachesData.filter(beach => {
+                const matchesVibe = selectedVibes.length === 0 || beach.vibe.some(v => selectedVibes.includes(v));
+                const matchesSnorkeling = !showOnlySnorkeling || beach.hasSnorkeling;
+                return matchesVibe && matchesSnorkeling;
+            });
+
+            beachGrid.innerHTML = '';
+            resultsCount.textContent = filtered.length;
+
+            if (filtered.length === 0) {
+                beachGrid.classList.add('hidden');
+                noResults.classList.remove('hidden');
+            } else {
+                beachGrid.classList.remove('hidden');
+                noResults.classList.add('hidden');
+                
+                filtered.forEach(beach => {
+                    const article = document.createElement('article');
+                    article.className = "group cursor-pointer transition-transform hover:-translate-y-2 duration-300";
+                    article.innerHTML = `
+                        <a href="${beach.slug}.html" class="block">
+                            <div class="relative aspect-[4/5] overflow-hidden rounded-3xl bg-gray-100 mb-4 shadow-sm group-hover:shadow-xl group-hover:shadow-black/5 transition-shadow duration-500">
+                                <img 
+                                    src="${beach.imageUrl}" 
+                                    alt="${beach.name}"
+                                    width="${beach.width}"
+                                    height="${beach.height}"
+                                    loading="lazy"
+                                    decoding="async"
+                                    class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                                >
+                                <div class="absolute top-4 right-4 flex flex-col gap-2">
+                                    ${beach.vibe.slice(0, 2).map(v => `
+                                        <span class="bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-sm">
+                                            ${v}
+                                        </span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-1">
+                                <div class="flex justify-between items-start">
+                                    <h3 class="text-lg font-bold group-hover:text-blue-600 transition-colors">${beach.name}</h3>
+                                    <div class="flex items-center gap-1">
+                                        <span class="text-xs font-bold text-gray-400">${beach.sandQuality}.0</span>
+                                        <span class="text-yellow-400 text-xs">★</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-500 text-sm line-clamp-2 leading-relaxed italic">
+                                    ${beach.description}
+                                </p>
+                                <div class="pt-2 text-[10px] font-black uppercase tracking-widest text-black underline underline-offset-8 decoration-2 decoration-blue-100 group-hover:decoration-blue-600 transition-all">
+                                    Read Full Guide &rarr;
+                                </div>
+                            </div>
+                        </a>
+                    `;
+                    beachGrid.appendChild(article);
+                });
+            }
+        }
+
+        function render() {
+            renderVibeFilters();
+            renderBeaches();
+            
+            if (showOnlySnorkeling) {
+                snorkelingCheckbox.classList.add('border-black', 'bg-black');
+                snorkelingCheckbox.classList.remove('border-gray-200');
+                snorkelingIcon.classList.remove('hidden');
+                snorkelingLabel.classList.add('text-black');
+                snorkelingLabel.classList.remove('text-gray-700');
+            } else {
+                snorkelingCheckbox.classList.remove('border-black', 'bg-black');
+                snorkelingCheckbox.classList.add('border-gray-200');
+                snorkelingIcon.classList.add('hidden');
+                snorkelingLabel.classList.remove('text-black');
+                snorkelingLabel.classList.add('text-gray-700');
+            }
+        }
+
+        clearVibesBtn.onclick = () => {
+            selectedVibes = [];
+            render();
+        };
+
+        snorkelingFilter.onchange = (e) => {
+            showOnlySnorkeling = e.target.checked;
+            render();
+        };
+
+        resetFiltersBtn.onclick = () => {
+            selectedVibes = [];
+            showOnlySnorkeling = false;
+            snorkelingFilter.checked = false;
+            render();
+        };
+
+        // Initial render
+        render();
+    </script>
+</body>
+</html>
