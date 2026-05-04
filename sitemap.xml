@@ -2,91 +2,91 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://phukettravel101.com/index.html</loc>
-    <lastmod>2026-05-02</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://phukettravel101.com/blog.html</loc>
-    <lastmod>2026-05-02</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
     <loc>https://phukettravel101.com/about.html</loc>
-    <lastmod>2026-05-02</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <priority>0.50</priority>
   </url>
   <url>
-    <loc>https://phukettravel101.com/beach-finder.html</loc>
-    <lastmod>2026-05-02</lastmod>
+    <loc>https://phukettravel101.com/blog.html</loc>
+    <lastmod>2026-05-03</lastmod>
     <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://phukettravel101.com/beach-finder.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://phukettravel101.com/budget-calculator.html</loc>
-    <lastmod>2026-05-02</lastmod>
-    <priority>0.80</priority>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://phukettravel101.com/visa-checker.html</loc>
-    <lastmod>2026-05-02</lastmod>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://phukettravel101.com/airport-transfer-guide.html</loc>
+    <lastmod>2026-05-03</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://phukettravel101.com/bang-tao-beach-guide.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <priority>0.64</priority>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://phukettravel101.com/best-time-to-visit-phuket.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://phukettravel101.com/elephant-sanctuaries.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <priority>0.64</priority>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://phukettravel101.com/grab-vs-bolt-indrive-guide.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://phukettravel101.com/hidden-coves.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <priority>0.64</priority>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://phukettravel101.com/kata-beach-guide.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <priority>0.64</priority>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://phukettravel101.com/mai-khao-beach-guide.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <priority>0.64</priority>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://phukettravel101.com/money-exchange-guide.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://phukettravel101.com/nai-harn-beach-guide.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <priority>0.64</priority>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://phukettravel101.com/old-town-cafes.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <priority>0.64</priority>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://phukettravel101.com/patong-beach-guide.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://phukettravel101.com/phuket-cost-guide-2026.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://phukettravel101.com/phuket-entry-guide-2026.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://phukettravel101.com/surin-beach-guide.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://phukettravel101.com/scooter-rental-guide.html</loc>
     <lastmod>2026-05-03</lastmod>
     <priority>0.80</priority>
   </url>
@@ -96,7 +96,27 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://phukettravel101.com/best-time-to-visit-phuket.html</loc>
+    <loc>https://phukettravel101.com/phuket-cost-guide-2026.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://phukettravel101.com/phuket-entry-guide-2026.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://phukettravel101.com/scooter-rental-guide.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://phukettravel101.com/surin-beach-guide.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://phukettravel101.com/tipping-guide.html</loc>
     <lastmod>2026-05-03</lastmod>
     <priority>0.80</priority>
   </url>

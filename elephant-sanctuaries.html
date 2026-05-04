@@ -46,12 +46,12 @@
         {
             "@type": "Article",
             "headline": "The Ethical Guide to Elephant Sanctuaries in Phuket",
-            "description": "Phuket\u2019s relationship with elephants has transformed in recent years. What was once an island dominated by trekking camps has become a global leader in ethical ",
-            "image": "images/guide-elephants.png",
-            "datePublished": "2026-05-01",
+            "description": "Phuket’s relationship with elephants has transformed in recent years. What was once an island dominated by trekking camps has become a global leader in ethical animal welfare.",
+            "image": "https://phukettravel101.com/images/guide-elephants.png",
+            "datePublished": "2026-05-03",
             "author": {
                 "@type": "Person",
-                "name": "Gemini Phuket"
+                "name": "Pom"
             },
             "publisher": {
                 "@id": "https://phukettravel101.com/#organization"
@@ -224,6 +224,38 @@
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-bold uppercase tracking-widest text-white/30">
             <p>&copy; 2026 PHUKET TRAVEL 101 • All Rights Reserved</p>
             <div class="flex gap-8">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuIcon = document.getElementById("menu-icon");
+
+        menuBtn?.addEventListener("click", () => {
+            const isHidden = mobileMenu.classList.contains("hidden");
+            if (isHidden) {
+                mobileMenu.classList.remove("hidden");
+                menuIcon.setAttribute("d", "M6 18L18 6M6 6l12 12");
+            } else {
+                mobileMenu.classList.add("hidden");
+                menuIcon.setAttribute("d", "M4 6h16M4 12h16m-7 6h7");
+            }
+        });
+
+        // Close menu on click outside
+        document.addEventListener("click", (e) => {
+            if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add("hidden");
+                menuIcon.setAttribute("d", "M4 6h16M4 12h16m-7 6h7");
+            }
+        });
+    </script>
+</body>
+</html>"flex gap-8">
                 <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
                 <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
                 <a href="#" class="hover:text-white transition-colors">Contact</a>
