@@ -22,7 +22,7 @@
     <meta property="og:url" content="https://phukettravel101.com/phuket-7-day-itinerary.html">
     <meta property="og:title" content="7 Days in Phuket: The Ultimate First-Timer's Itinerary">
     <meta property="og:description" content="Don't miss a thing. Our 4,000-word guide takes you through the best of Phuket with an interactive map tracking your progress.">
-    <meta property="og:image" content="images/homepage-header.png">
+    <meta property="og:image" content="images/phuket-7-day-itinerary.png">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -41,7 +41,7 @@
             {
                 "@type": "Article",
                 "headline": "7 Days in Phuket: The Ultimate First-Timer's Itinerary (2026)",
-                "image": "images/homepage-header.png",
+                "image": "images/phuket-7-day-itinerary.png",
                 "datePublished": "2026-05-04",
                 "author": {"@type": "Person", "name": "Pom"},
                 "publisher": {"@id": "https://phukettravel101.com/#organization"}
@@ -81,11 +81,22 @@
         </div>
     </nav>
 
+    <!-- Mobile Progress Bar -->
+    <div class="lg:hidden fixed top-0 left-0 w-full h-1 z-[60] bg-slate-100">
+        <div id="mobile-progress" class="h-full bg-blue-600 transition-all duration-300" style="width: 0%"></div>
+    </div>
+
     <main class="max-w-7xl mx-auto px-4 md:px-6 pt-24 md:pt-32 pb-20">
         <div class="grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-12">
             
             <!-- Main Content -->
             <article class="max-w-4xl mx-auto">
+                <!-- Hero Image -->
+                <div class="relative mb-12 group">
+                    <img src="images/phuket-7-day-itinerary.png" alt="7 Days in Phuket: The Ultimate Itinerary" fetchpriority="high" class="w-full aspect-video md:h-[500px] object-cover rounded-4xl shadow-2xl transition-transform duration-700 group-hover:scale-[1.01]" width="1200" height="675">
+                    <div class="absolute inset-0 rounded-4xl ring-1 ring-inset ring-black/10"></div>
+                </div>
+
                 <header class="mb-12">
                     <span class="text-[10px] font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full uppercase tracking-widest inline-block mb-6">Expert Itinerary</span>
                     <h1 class="text-3xl md:text-6xl font-black tracking-tight mb-8 leading-tight">7 Days in Phuket: <br>The Definitive 2026 Guide</h1>
@@ -404,6 +415,17 @@
 
         document.querySelectorAll('section[id^="day-"]').forEach(section => {
             observer.observe(section);
+        });
+
+        // Mobile Progress Bar Logic
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth < 1024) {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                const progressBar = document.getElementById('mobile-progress');
+                if (progressBar) progressBar.style.width = scrolled + "%";
+            }
         });
 
         // Navigation Logic
