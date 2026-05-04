@@ -16,6 +16,7 @@
     <title>7 Days in Phuket: The Ultimate First-Timer's Itinerary (2026) - PHUKET TRAVEL 101</title>
     <meta name="title" content="7 Days in Phuket: The Ultimate First-Timer's Itinerary (2026) - PHUKET TRAVEL 101">
     <meta name="description" content="Master your first trip to Phuket with our expert 7-day itinerary. Includes an interactive sticky map, hidden local secrets, and the perfect balance of adventure and relaxation.">
+    <meta name="keywords" content="Phuket itinerary, 7 days in Phuket, Phuket travel guide, first time Phuket, Phuket map, Old Town Phuket, Big Buddha, Phang Nga Bay">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
@@ -54,8 +55,11 @@
         .map-region.active { fill: #3b82f6; stroke: #2563eb; stroke-width: 2; filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5)); }
         .map-pin { transition: all 0.5s ease; opacity: 0; transform: scale(0); transform-origin: center; }
         .map-pin.active { opacity: 1; transform: scale(1); }
-        .timeline-dot { transition: all 0.3s ease; }
-        .timeline-item.active .timeline-dot { transform: scale(1.5); background-color: #3b82f6; box-shadow: 0 0 15px rgba(59, 130, 246, 0.5); }
+        
+        .nav-item { position: relative; transition: all 0.5s ease; }
+        .nav-item.active { opacity: 1 !important; }
+        .nav-item.active .nav-dot { background-color: #3b82f6; color: white; transform: scale(1.1); box-shadow: 0 0 15px rgba(59, 130, 246, 0.3); border-color: #3b82f6; }
+        .nav-dot { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
     </style>
 </head>
 <body class="bg-white text-gray-900 selection:bg-black selection:text-white font-sans">
@@ -308,34 +312,39 @@
                             </svg>
                         </div>
 
-                        <div class="space-y-4">
-                            <div id="nav-day-1" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500">
-                                <span class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold">1</span>
-                                <span class="text-xs font-bold uppercase tracking-widest">Phuket Old Town</span>
-                            </div>
-                            <div id="nav-day-2" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500">
-                                <span class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold">2</span>
-                                <span class="text-xs font-bold uppercase tracking-widest">Big Buddha & South</span>
-                            </div>
-                            <div id="nav-day-3" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500">
-                                <span class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold">3</span>
-                                <span class="text-xs font-bold uppercase tracking-widest">Phang Nga Bay</span>
-                            </div>
-                            <div id="nav-day-4" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500">
-                                <span class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold">4</span>
-                                <span class="text-xs font-bold uppercase tracking-widest">Elephants & Bang Tao</span>
-                            </div>
-                            <div id="nav-day-5" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500">
-                                <span class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold">5</span>
-                                <span class="text-xs font-bold uppercase tracking-widest">Andaman Odyssey</span>
-                            </div>
-                            <div id="nav-day-6" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500">
-                                <span class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold">6</span>
-                                <span class="text-xs font-bold uppercase tracking-widest">Rawai & Sunset</span>
-                            </div>
-                            <div id="nav-day-7" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500">
-                                <span class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold">7</span>
-                                <span class="text-xs font-bold uppercase tracking-widest">Departure Ritual</span>
+                        <div class="relative">
+                            <!-- Vertical Line -->
+                            <div class="absolute left-4 top-4 bottom-4 w-0.5 bg-slate-100 -translate-x-1/2"></div>
+                            
+                            <div class="space-y-6 relative">
+                                <div id="nav-day-1" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500">
+                                    <span class="nav-dot relative z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold border-4 border-white">1</span>
+                                    <span class="text-[10px] font-bold uppercase tracking-widest">Phuket Old Town</span>
+                                </div>
+                                <div id="nav-day-2" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500">
+                                    <span class="nav-dot relative z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold border-4 border-white">2</span>
+                                    <span class="text-[10px] font-bold uppercase tracking-widest">Big Buddha & South</span>
+                                </div>
+                                <div id="nav-day-3" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500">
+                                    <span class="nav-dot relative z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold border-4 border-white">3</span>
+                                    <span class="text-[10px] font-bold uppercase tracking-widest">Phang Nga Bay</span>
+                                </div>
+                                <div id="nav-day-4" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500">
+                                    <span class="nav-dot relative z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold border-4 border-white">4</span>
+                                    <span class="text-[10px] font-bold uppercase tracking-widest">Elephants & Bang Tao</span>
+                                </div>
+                                <div id="nav-day-5" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500">
+                                    <span class="nav-dot relative z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold border-4 border-white">5</span>
+                                    <span class="text-[10px] font-bold uppercase tracking-widest">Andaman Odyssey</span>
+                                </div>
+                                <div id="nav-day-6" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500">
+                                    <span class="nav-dot relative z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold border-4 border-white">6</span>
+                                    <span class="text-[10px] font-bold uppercase tracking-widest">Rawai & Sunset</span>
+                                </div>
+                                <div id="nav-day-7" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500">
+                                    <span class="nav-dot relative z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold border-4 border-white">7</span>
+                                    <span class="text-[10px] font-bold uppercase tracking-widest">Departure Ritual</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -395,8 +404,10 @@
                     // Reset all
                     document.querySelectorAll('.map-region').forEach(el => el.classList.remove('active'));
                     document.querySelectorAll('.map-pin').forEach(el => el.classList.remove('active'));
-                    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('opacity-100'));
-                    document.querySelectorAll('.nav-item').forEach(el => el.classList.add('opacity-30'));
+                    document.querySelectorAll('.nav-item').forEach(el => {
+                        el.classList.remove('active');
+                        el.classList.add('opacity-30');
+                    });
                     
                     // Activate current
                     const region = document.getElementById(`region-${dayNum}`);
@@ -406,7 +417,7 @@
                     if (region) region.classList.add('active');
                     if (pin) pin.classList.add('active');
                     if (nav) {
-                        nav.classList.add('opacity-100');
+                        nav.classList.add('active');
                         nav.classList.remove('opacity-30');
                     }
                 }
