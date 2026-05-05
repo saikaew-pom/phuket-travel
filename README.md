@@ -16,7 +16,7 @@ For development (Tailwind CSS compilation):
 - **Architecture**: Pure Vanilla (No frameworks) for 99+ Performance Scores.
 - **Styling**: Tailwind CSS 4.0 with Custom Glass-morphism Utilities.
 - **Interactivity**: Modern ES6+ JavaScript.
-- **SEO**: Advanced JSON-LD (Schema.org), Open Graph, and Twitter Metadata for all 24 pages.
+- **SEO**: Advanced JSON-LD (Schema.org), Open Graph, and Twitter Metadata for all 28 pages.
 - **Typography**: Plus Jakarta Sans.
 
 ## 📁 Project Structure
