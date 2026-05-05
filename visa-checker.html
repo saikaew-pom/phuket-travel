@@ -140,7 +140,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-24 px-6">
+    <footer class="bg-black text-white py-20 md:py-24 px-4 md:px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-16 mb-16">
             <div class="md:col-span-2">
                 <a href="index.html" class="text-3xl font-black tracking-tighter mb-6 block">PHUKET TRAVEL 101</a>
@@ -153,7 +153,7 @@
                 <ul class="space-y-4 text-sm font-bold">
                     <li><a href="beach-finder.html" class="hover:text-blue-500 transition-colors">Beach Finder</a></li>
                     <li><a href="budget-calculator.html" class="hover:text-blue-500 transition-colors">Budget Calculator</a></li>
-                    <li><a href="visa-checker.html" class="hover:text-blue-500 transition-colors text-blue-500">Visa Checker</a></li>
+                    <li><a href="visa-checker.html" class="hover:text-blue-500 transition-colors">Visa Checker</a></li>
                 </ul>
             </div>
             <div>
@@ -177,22 +177,6 @@
     </footer>
 
     <script>
-        // Mobile Menu Logic
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-
-        menuBtn?.addEventListener('click', () => {
-            const isHidden = mobileMenu.classList.contains('hidden');
-            if (isHidden) {
-                mobileMenu.classList.remove('hidden');
-                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
-            } else {
-                mobileMenu.classList.add('hidden');
-                menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
-            }
-        });
-
         // Visa Checker Logic
         const visaData = [
             { country: "United States", status: "Visa Exempt", duration: "60 Days", forms: ["TDAC (Mandatory)"] },
@@ -220,64 +204,90 @@
         const noResult = document.getElementById('no-result');
 
         // Populate options
-        visaData.sort((a, b) => a.country.localeCompare(b.country)).forEach(d => {
-            const option = document.createElement('option');
-            option.value = d.country;
-            option.textContent = d.country;
-            countrySelect.appendChild(option);
+        if (countrySelect) {
+            visaData.sort((a, b) => a.country.localeCompare(b.country)).forEach(d => {
+                const option = document.createElement('option');
+                option.value = d.country;
+                option.textContent = d.country;
+                countrySelect.appendChild(option);
+            });
+
+            countrySelect.addEventListener('change', (e) => {
+                const selectedCountry = e.target.value;
+                const result = visaData.find(d => d.country === selectedCountry);
+
+                if (result) {
+                    resultContainer.innerHTML = `
+                        <div class="bg-white p-8 rounded-2xl border border-green-100 shadow-xl shadow-green-900/5 transform transition-all scale-100 opacity-100">
+                            <div class="flex items-center gap-5 mb-6">
+                                <div class="w-14 h-14 bg-green-50 rounded-full flex items-center justify-center text-3xl">
+                                    ✅
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-xl">${result.status}</h4>
+                                    <p class="text-sm text-green-600 font-medium tracking-tight uppercase">Up to ${result.duration}</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-6">
+                                <div class="p-5 bg-gray-50 rounded-xl border border-gray-100">
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400 block mb-2">Required Forms</span>
+                                    <p class="font-bold text-base text-gray-800 leading-tight">Thailand Digital Arrival Card (TDAC)</p>
+                                    <p class="text-xs text-gray-500 mt-2 italic">Must be submitted 72 hours before arrival.</p>
+                                </div>
+
+                                <a 
+                                    href="https://tdac.immigration.go.th" 
+                                    target="_blank"
+                                    class="block w-full py-4 bg-black text-white text-center rounded-xl font-bold text-base hover:bg-gray-800 transition-all hover:shadow-lg active:scale-95"
+                                >
+                                    Go to Official TDAC Portal
+                                </a>
+                            </div>
+
+                            <div class="mt-8 pt-8 border-t border-gray-100 space-y-3">
+                                <p class="text-[11px] text-gray-400 leading-relaxed">
+                                    • Passport must be valid for at least 6 months.<br />
+                                    • Proof of onward travel (ticket out of Thailand) required.<br />
+                                    • Proof of funds (10,000 THB/person) may be requested.
+                                </p>
+                            </div>
+                        </div>
+                    `;
+                    resultContainer.classList.remove('hidden');
+                    noResult.classList.add('hidden');
+                } else {
+                    resultContainer.classList.add('hidden');
+                    if (selectedCountry) {
+                        noResult.classList.remove('hidden');
+                    } else {
+                        noResult.classList.add('hidden');
+                    }
+                }
+            });
+        }
+
+        // Standard Mobile Menu Script
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn?.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+            }
         });
 
-        countrySelect.addEventListener('change', (e) => {
-            const selectedCountry = e.target.value;
-            const result = visaData.find(d => d.country === selectedCountry);
-
-            if (result) {
-                resultContainer.innerHTML = `
-                    <div class="bg-white p-8 rounded-2xl border border-green-100 shadow-xl shadow-green-900/5 transform transition-all scale-100 opacity-100">
-                        <div class="flex items-center gap-5 mb-6">
-                            <div class="w-14 h-14 bg-green-50 rounded-full flex items-center justify-center text-3xl">
-                                ✅
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-xl">${result.status}</h4>
-                                <p class="text-sm text-green-600 font-medium tracking-tight uppercase">Up to ${result.duration}</p>
-                            </div>
-                        </div>
-
-                        <div class="space-y-6">
-                            <div class="p-5 bg-gray-50 rounded-xl border border-gray-100">
-                                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400 block mb-2">Required Forms</span>
-                                <p class="font-bold text-base text-gray-800 leading-tight">Thailand Digital Arrival Card (TDAC)</p>
-                                <p class="text-xs text-gray-500 mt-2 italic">Must be submitted 72 hours before arrival.</p>
-                            </div>
-
-                            <a 
-                                href="https://tdac.immigration.go.th" 
-                                target="_blank"
-                                class="block w-full py-4 bg-black text-white text-center rounded-xl font-bold text-base hover:bg-gray-800 transition-all hover:shadow-lg active:scale-95"
-                            >
-                                Go to Official TDAC Portal
-                            </a>
-                        </div>
-
-                        <div class="mt-8 pt-8 border-t border-gray-100 space-y-3">
-                            <p class="text-[11px] text-gray-400 leading-relaxed">
-                                • Passport must be valid for at least 6 months.<br />
-                                • Proof of onward travel (ticket out of Thailand) required.<br />
-                                • Proof of funds (10,000 THB/person) may be requested.
-                            </p>
-                        </div>
-                    </div>
-                `;
-                resultContainer.classList.remove('hidden');
-                noResult.classList.add('hidden');
-            } else {
-                resultContainer.classList.add('hidden');
-                if (selectedCountry) {
-                    noResult.classList.remove('hidden');
-                } else {
-                    noResult.classList.add('hidden');
-                }
+        // Close menu on click outside
+        document.addEventListener('click', (e) => {
+            if (menuBtn && !menuBtn.contains(e.target) && mobileMenu && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
             }
         });
     </script>

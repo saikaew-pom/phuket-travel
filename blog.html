@@ -152,7 +152,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-24 px-6">
+    <footer class="bg-black text-white py-20 md:py-24 px-4 md:px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-16 mb-16">
             <div class="md:col-span-2">
                 <a href="index.html" class="text-3xl font-black tracking-tighter mb-6 block">PHUKET TRAVEL 101</a>
@@ -205,8 +205,9 @@
             }
         });
 
+        // Close menu on click outside
         document.addEventListener('click', (e) => {
-            if (menuBtn && !menuBtn.contains(e.target) && mobileMenu && !mobileMenu.contains(e.target)) {
+            if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
                 mobileMenu.classList.add('hidden');
                 menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
             }

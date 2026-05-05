@@ -68,19 +68,35 @@
     <nav class="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-4">
         <div class="max-w-7xl mx-auto glass border border-white/20 rounded-[2rem] md:rounded-full px-6 md:px-8 py-3 flex items-center justify-between shadow-xl shadow-black/5">
             <a href="index.html" class="text-lg md:text-xl font-extrabold tracking-tighter hover:opacity-70 transition-opacity">PHUKET TRAVEL 101</a>
+            
+            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest">
                 <a href="index.html#tools" class="hover:text-blue-600 transition-colors">Tools</a>
                 <a href="blog.html" class="hover:text-blue-600 transition-colors">Guides</a>
                 <a href="beach-finder.html" class="hover:text-blue-600 transition-colors">Beaches</a>
                 <a href="about.html" class="hover:text-blue-600 transition-colors">About</a>
             </div>
+
             <div class="flex items-center gap-3">
                 <a href="blog.html" class="hidden sm:block bg-black text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gray-800 transition-all active:scale-95">Explore</a>
+                
+                <!-- Mobile Menu Button -->
                 <button id="menu-btn" class="md:hidden p-2 hover:bg-black/5 rounded-xl transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
                 </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-4 right-4 mt-2 glass border border-white/20 rounded-3xl p-6 shadow-2xl shadow-black/10 animate-fade-in">
+            <div class="flex flex-col gap-6 text-sm font-bold uppercase tracking-widest">
+                <a href="index.html#tools" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Tools</a>
+                <a href="blog.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Guides</a>
+                <a href="beach-finder.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Beaches</a>
+                <a href="about.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">About</a>
+                <a href="blog.html" class="bg-black text-white px-6 py-4 rounded-2xl text-center">Explore Phuket</a>
             </div>
         </div>
     </nav>
@@ -275,6 +291,55 @@
                     <h2 id="final-advice">Pom's Final Advice for First-Timers</h2>
                     <p>Phuket is a place of deep beauty, but it rewards those who respect it. Smile often, learn a few words of Thai ('Sawatdee-kap' for hello, 'Kop-khun-kap' for thank you), and be patient with the traffic. The island is growing fast, but its heart remains the same. I've spent nearly two decades here, and I still find magic in the smell of street-side satay and the sound of the evening prayer calls in the south. I hope this week has shown you why I call this island home.</p>
                 </div>
+
+                <!-- Social Sharing -->
+                <div class="mt-16 pt-8 border-t border-gray-100">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+                        <h3 class="text-sm font-bold uppercase tracking-widest text-gray-400">Share this guide</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <button onclick="window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(document.title), '_blank')" class="flex items-center gap-2 px-4 py-2 bg-gray-50 hover:bg-blue-50 hover:text-blue-600 rounded-full text-sm font-bold transition-all">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                                Twitter
+                            </button>
+                            <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank')" class="flex items-center gap-2 px-4 py-2 bg-gray-50 hover:bg-blue-50 hover:text-blue-600 rounded-full text-sm font-bold transition-all">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+                                Facebook
+                            </button>
+                            <button onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied to clipboard!')" class="flex items-center gap-2 px-4 py-2 bg-gray-50 hover:bg-blue-50 hover:text-blue-600 rounded-full text-sm font-bold transition-all">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+                                Copy Link
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Blogs -->
+                <div class="mt-24">
+                    <h2 class="text-2xl font-black tracking-tight mb-8">Related Guides</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <a href="phuket-cost-guide-2026.html" class="group">
+                            <div class="relative overflow-hidden rounded-2xl mb-4">
+                                <img src="images/tool-budget-calc.png" alt="Phuket Cost Guide 2026" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-blue-600 mb-2 block">Budget Guide</span>
+                            <h3 class="font-bold leading-tight group-hover:text-blue-600 transition-colors">Phuket Cost Guide 2026</h3>
+                        </a>
+                        <a href="monsoon-season-guide.html" class="group">
+                            <div class="relative overflow-hidden rounded-2xl mb-4">
+                                <img src="images/guide-phuket-monsoon.png" alt="Monsoon Season Guide" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-blue-600 mb-2 block">Seasonal Guide</span>
+                            <h3 class="font-bold leading-tight group-hover:text-blue-600 transition-colors">Monsoon Season Survival Guide</h3>
+                        </a>
+                        <a href="old-town-cafes.html" class="group">
+                            <div class="relative overflow-hidden rounded-2xl mb-4">
+                                <img src="images/guide-old-town-cafes.png" alt="Old Town Cafes Guide" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-blue-600 mb-2 block">Local Culture</span>
+                            <h3 class="font-bold leading-tight group-hover:text-blue-600 transition-colors">Best Cafes in Old Town</h3>
+                        </a>
+                    </div>
+                </div>
             </article>
 
             <!-- Sticky Sidebar -->
@@ -354,11 +419,13 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-24 px-6">
+    <footer class="bg-black text-white py-20 md:py-24 px-4 md:px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-16 mb-16">
             <div class="md:col-span-2">
                 <a href="index.html" class="text-3xl font-black tracking-tighter mb-6 block">PHUKET TRAVEL 101</a>
-                <p class="text-gray-400 max-w-sm leading-relaxed">Helping you discover the authentic side of Thailand's most famous island since 2026. 17+ years of hospitality excellence.</p>
+                <p class="text-gray-400 max-w-sm leading-relaxed">
+                    Helping you discover the authentic side of Thailand's most famous island since 2026.
+                </p>
             </div>
             <div>
                 <h4 class="text-xs font-bold uppercase tracking-widest text-white/40 mb-6">Interactive Tools</h4>
@@ -372,8 +439,9 @@
                 <h4 class="text-xs font-bold uppercase tracking-widest text-white/40 mb-6">Content</h4>
                 <ul class="space-y-4 text-sm font-bold">
                     <li><a href="blog.html" class="hover:text-blue-500 transition-colors">Travel Guides</a></li>
-                    <li><a href="about.html" class="hover:text-blue-500 transition-colors">About Us</a></li>
+                    <li><a href="blog.html" class="hover:text-blue-500 transition-colors">Local Secrets</a></li>
                     <li><a href="blog.html" class="hover:text-blue-500 transition-colors">Photography</a></li>
+                    <li><a href="about.html" class="hover:text-blue-500 transition-colors">About Us</a></li>
                 </ul>
             </div>
         </div>
@@ -450,6 +518,14 @@
                 mobileMenu.classList.remove('hidden');
                 menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
             } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+            }
+        });
+
+        // Close menu on click outside
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
                 mobileMenu.classList.add('hidden');
                 menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
             }

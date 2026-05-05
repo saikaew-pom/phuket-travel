@@ -69,7 +69,8 @@
     </script>
 </head>
 <body class="bg-white text-gray-900 selection:bg-black selection:text-white">
-        <!-- Navigation -->
+
+    <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-4">
         <div class="max-w-7xl mx-auto glass border border-white/20 rounded-[2rem] md:rounded-full px-6 md:px-8 py-3 flex items-center justify-between shadow-xl shadow-black/5">
             <a href="index.html" class="text-lg md:text-xl font-extrabold tracking-tighter hover:opacity-70 transition-opacity">PHUKET TRAVEL 101</a>
@@ -166,6 +167,7 @@
 <p>Surin Beach is a testament to the fact that sometimes, less is more. By removing the clutter of the past, the island has rediscovered one of its most beautiful assets. If you appreciate clear water, natural shade, and a touch of sophistication, Surin is likely to be your favorite beach in Phuket.</p>
 <p><em>Insights provided by the long-time residents and experts at Phuket 101.</em></p>
             </div>
+
             <!-- Social Sharing -->
             <div class="mt-16 pt-8 border-t border-gray-100">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
@@ -180,14 +182,14 @@
                             Facebook
                         </button>
                         <button onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied to clipboard!')" class="flex items-center gap-2 px-4 py-2 bg-gray-50 hover:bg-blue-50 hover:text-blue-600 rounded-full text-sm font-bold transition-all">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
                             Copy Link
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Related Blogs -->
+            <!-- Related Guides -->
             <div class="mt-24">
                 <h2 class="text-2xl font-black tracking-tight mb-8">Related Guides</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -220,7 +222,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-24 px-6">
+    <footer class="bg-black text-white py-20 md:py-24 px-4 md:px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-16 mb-16">
             <div class="md:col-span-2">
                 <a href="index.html" class="text-3xl font-black tracking-tighter mb-6 block">PHUKET TRAVEL 101</a>
@@ -255,27 +257,28 @@
             </div>
         </div>
     </footer>
-    <script>
-        const menuBtn = document.getElementById("menu-btn");
-        const mobileMenu = document.getElementById("mobile-menu");
-        const menuIcon = document.getElementById("menu-icon");
 
-        menuBtn?.addEventListener("click", () => {
-            const isHidden = mobileMenu.classList.contains("hidden");
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn?.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
             if (isHidden) {
-                mobileMenu.classList.remove("hidden");
-                menuIcon.setAttribute("d", "M6 18L18 6M6 6l12 12");
+                mobileMenu.classList.remove('hidden');
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
             } else {
-                mobileMenu.classList.add("hidden");
-                menuIcon.setAttribute("d", "M4 6h16M4 12h16m-7 6h7");
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
             }
         });
 
         // Close menu on click outside
-        document.addEventListener("click", (e) => {
-            if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
-                mobileMenu.classList.add("hidden");
-                menuIcon.setAttribute("d", "M4 6h16M4 12h16m-7 6h7");
+        document.addEventListener('click', (e) => {
+            if (menuBtn && !menuBtn.contains(e.target) && mobileMenu && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
             }
         });
     </script>

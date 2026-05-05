@@ -61,13 +61,36 @@
     <nav class="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-4">
         <div class="max-w-7xl mx-auto glass border border-white/20 rounded-[2rem] md:rounded-full px-6 md:px-8 py-3 flex items-center justify-between shadow-xl shadow-black/5">
             <a href="index.html" class="text-lg md:text-xl font-extrabold tracking-tighter hover:opacity-70 transition-opacity">PHUKET TRAVEL 101</a>
+            
+            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest">
                 <a href="index.html#tools" class="hover:text-blue-600 transition-colors">Tools</a>
                 <a href="blog.html" class="hover:text-blue-600 transition-colors">Guides</a>
                 <a href="beach-finder.html" class="hover:text-blue-600 transition-colors">Beaches</a>
                 <a href="about.html" class="hover:text-blue-600 transition-colors">About</a>
             </div>
-            <a href="blog.html" class="bg-black text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gray-800 transition-all active:scale-95">Explore</a>
+
+            <div class="flex items-center gap-3">
+                <a href="blog.html" class="hidden sm:block bg-black text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gray-800 transition-all active:scale-95">Explore</a>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden p-2 hover:bg-black/5 rounded-xl transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-4 right-4 mt-2 glass border border-white/20 rounded-3xl p-6 shadow-2xl shadow-black/10 animate-fade-in">
+            <div class="flex flex-col gap-6 text-sm font-bold uppercase tracking-widest">
+                <a href="index.html#tools" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Tools</a>
+                <a href="blog.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Guides</a>
+                <a href="beach-finder.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Beaches</a>
+                <a href="about.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">About</a>
+                <a href="blog.html" class="bg-black text-white px-6 py-4 rounded-2xl text-center">Explore Phuket</a>
+            </div>
         </div>
     </nav>
 
@@ -88,13 +111,38 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-24 px-6 mt-auto">
+    <footer class="bg-black text-white py-20 md:py-24 px-4 md:px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-16 mb-16">
+            <div class="md:col-span-2">
+                <a href="index.html" class="text-3xl font-black tracking-tighter mb-6 block">PHUKET TRAVEL 101</a>
+                <p class="text-gray-400 max-w-sm leading-relaxed">
+                    Helping you discover the authentic side of Thailand's most famous island since 2026.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-widest text-white/40 mb-6">Interactive Tools</h4>
+                <ul class="space-y-4 text-sm font-bold">
+                    <li><a href="beach-finder.html" class="hover:text-blue-500 transition-colors">Beach Finder</a></li>
+                    <li><a href="budget-calculator.html" class="hover:text-blue-500 transition-colors">Budget Calculator</a></li>
+                    <li><a href="visa-checker.html" class="hover:text-blue-500 transition-colors">Visa Checker</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-widest text-white/40 mb-6">Content</h4>
+                <ul class="space-y-4 text-sm font-bold">
+                    <li><a href="blog.html" class="hover:text-blue-500 transition-colors">Travel Guides</a></li>
+                    <li><a href="blog.html" class="hover:text-blue-500 transition-colors">Local Secrets</a></li>
+                    <li><a href="blog.html" class="hover:text-blue-500 transition-colors">Photography</a></li>
+                    <li><a href="about.html" class="hover:text-blue-500 transition-colors">About Us</a></li>
+                </ul>
+            </div>
+        </div>
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-bold uppercase tracking-widest text-white/30">
             <p>&copy; 2026 PHUKET TRAVEL 101 • All Rights Reserved</p>
             <div class="flex gap-8">
-                <a href="index.html" class="hover:text-white transition-colors">Home</a>
-                <a href="about.html" class="hover:text-white transition-colors">About</a>
-                <a href="blog.html" class="hover:text-white transition-colors">Blog</a>
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-white transition-colors">Contact</a>
             </div>
         </div>
     </footer>
@@ -110,6 +158,14 @@
                 mobileMenu.classList.remove('hidden');
                 menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
             } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+            }
+        });
+
+        // Close menu on click outside
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
                 mobileMenu.classList.add('hidden');
                 menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
             }
