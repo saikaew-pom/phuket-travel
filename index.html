@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DTC7ZR7JVK"></script>
+<!-- Google tag (gtag.js) - delayed for performance -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-DTC7ZR7JVK');
+  function loadGoogleTag(){
+    if (window.__gtagLoaded) return;
+    window.__gtagLoaded = true;
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-DTC7ZR7JVK';
+    document.head.appendChild(script);
+    gtag('js', new Date());
+    gtag('config', 'G-DTC7ZR7JVK');
+  }
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadGoogleTag, { timeout: 3000 });
+  } else {
+    window.addEventListener('load', () => setTimeout(loadGoogleTag, 1500), { once: true });
+  }
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,9 +48,14 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="https://phukettravel101.com/images/favicon.svg">
+    <link rel="preload" as="image" href="https://phukettravel101.com/images/perf/homepage-header-640.jpg" imagesrcset="https://phukettravel101.com/images/perf/homepage-header-640.jpg 640w, https://phukettravel101.com/images/perf/homepage-header-960.jpg 960w, https://phukettravel101.com/images/homepage-header-optimized.jpg 1600w" imagesizes="100vw" fetchpriority="high">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
 
     <!-- Production CSS -->
     <link rel="stylesheet" href="styles.css">
@@ -90,9 +106,10 @@
     </script>
 </head>
 <body class="bg-white text-gray-900 selection:bg-black selection:text-white">
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-4">
+    <nav aria-label="Main navigation" class="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-4">
         <div class="max-w-7xl mx-auto glass border border-white/20 rounded-[2rem] md:rounded-full px-6 md:px-8 py-3 flex items-center justify-between shadow-xl shadow-black/5">
             <a href="index.html" class="text-lg md:text-xl font-extrabold tracking-tighter hover:opacity-70 transition-opacity">PHUKET TRAVEL 101</a>
             
@@ -108,8 +125,8 @@
                 <a href="blog.html" class="hidden sm:block bg-black text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gray-800 transition-all active:scale-95">Explore</a>
                 
                 <!-- Mobile Menu Button -->
-                <button id="menu-btn" class="md:hidden p-2 hover:bg-black/5 rounded-xl transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <button id="menu-btn" class="md:hidden p-2 hover:bg-black/5 rounded-xl transition-colors" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
                 </button>
@@ -117,7 +134,7 @@
         </div>
 
         <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-4 right-4 mt-2 glass border border-white/20 rounded-3xl p-6 shadow-2xl shadow-black/10 animate-fade-in">
+        <div id="mobile-menu" role="navigation" aria-label="Mobile navigation" class="hidden md:hidden absolute top-full left-4 right-4 mt-2 glass border border-white/20 rounded-3xl p-6 shadow-2xl shadow-black/10 animate-fade-in">
             <div class="flex flex-col gap-6 text-sm font-bold uppercase tracking-widest">
                 <a href="index.html#tools" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Tools</a>
                 <a href="blog.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Guides</a>
@@ -129,14 +146,16 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative h-[95vh] flex items-center justify-center overflow-hidden px-4 md:px-6 pt-24 md:pt-32 pb-20">
+    <section id="main-content" class="relative h-[95vh] flex items-center justify-center overflow-hidden px-4 md:px-6 pt-24 md:pt-32 pb-20">
         <div class="absolute inset-4 z-0 rounded-4xl overflow-hidden">
-            <img 
-                src="https://phukettravel101.com/images/homepage-header-optimized.jpg"
+            <img
+                src="https://phukettravel101.com/images/perf/homepage-header-960.jpg"
+                srcset="https://phukettravel101.com/images/perf/homepage-header-640.jpg 640w, https://phukettravel101.com/images/perf/homepage-header-960.jpg 960w, https://phukettravel101.com/images/homepage-header-optimized.jpg 1600w"
+                sizes="100vw"
                 alt="Stunning Phuket Beach Landscape" 
                 class="w-full h-full object-cover"
-                width="1920"
-                height="1080"
+                width="960"
+                height="537"
                 fetchpriority="high"
             >
             <div class="absolute inset-0 bg-black/40 backdrop-blur-[1px]"></div>
@@ -176,7 +195,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Beach Finder Tool -->
             <a href="beach-finder.html" class="group relative aspect-[4/5] rounded-3xl overflow-hidden bg-gray-900 shadow-2xl shadow-blue-500/10">
-                <img src="https://phukettravel101.com/images/tool-beach-finder.png" alt="Beach Finder" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" width="800" height="1000" loading="lazy">
+                <img src="https://phukettravel101.com/images/perf/tool-beach-finder-800.jpg" alt="Beach Finder" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" width="800" height="448" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
                 <div class="absolute bottom-8 left-8 right-8">
                     <span class="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-2 block">Interactive Tool</span>
@@ -190,7 +209,7 @@
 
             <!-- Budget Calculator Tool -->
             <a href="budget-calculator.html" class="group relative aspect-[4/5] rounded-3xl overflow-hidden bg-gray-900 shadow-2xl shadow-green-500/10">
-                <img src="https://phukettravel101.com/images/tool-budget-calc.png" alt="Budget Calculator" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" style="object-position: center 30%;" width="800" height="1000" loading="lazy">
+                <img src="https://phukettravel101.com/images/perf/tool-budget-calc-800.jpg" alt="Budget Calculator" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" style="object-position: center 30%;" width="800" height="602" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
                 <div class="absolute bottom-8 left-8 right-8">
                     <span class="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-2 block">Interactive Tool</span>
@@ -204,7 +223,7 @@
 
             <!-- Visa Checker Tool -->
             <a href="visa-checker.html" class="group relative aspect-[4/5] rounded-3xl overflow-hidden bg-gray-900 shadow-2xl shadow-purple-500/10">
-                <img src="https://phukettravel101.com/images/tool-visa-checker.png" alt="Visa Checker" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" width="800" height="1000" loading="lazy">
+                <img src="https://phukettravel101.com/images/perf/tool-visa-checker-800.jpg" alt="Visa Checker" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" width="800" height="602" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
                 <div class="absolute bottom-8 left-8 right-8">
                     <span class="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-2 block">Interactive Tool</span>
@@ -235,7 +254,7 @@
                 <!-- Guide 1 -->
                 <a href="phuket-7-day-itinerary.html" class="group block">
                     <div class="overflow-hidden rounded-3xl mb-6 aspect-video shadow-lg group-hover:shadow-2xl transition-all duration-500">
-                        <img src="https://phukettravel101.com/images/phuket-7-day-itinerary.png" alt="Phuket 7-Day Itinerary" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="800" height="450" loading="lazy">
+                        <img src="https://phukettravel101.com/images/perf/phuket-7-day-itinerary-800.jpg" alt="Phuket 7-Day Itinerary" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="800" height="600" loading="lazy">
                     </div>
                     <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest block mb-2">Expert Itinerary</span>
                     <h3 class="text-2xl font-bold mb-3 group-hover:text-blue-600 transition-colors leading-tight">7 Days in Phuket: The 2026 Guide</h3>
@@ -246,7 +265,7 @@
                 <!-- Guide 2 -->
                 <a href="phuket-packing-list.html" class="group block">
                     <div class="overflow-hidden rounded-3xl mb-6 aspect-video shadow-lg group-hover:shadow-2xl transition-all duration-500">
-                        <img src="https://phukettravel101.com/images/phuket-packing-list.png" alt="Phuket Packing List Guide" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="800" height="450" loading="lazy">
+                        <img src="https://phukettravel101.com/images/perf/phuket-packing-list-800.jpg" alt="Phuket Packing List Guide" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="800" height="600" loading="lazy">
                     </div>
                     <span class="text-[10px] font-bold text-teal-600 uppercase tracking-widest block mb-2">Master Guide</span>
                     <h3 class="text-2xl font-bold mb-3 group-hover:text-teal-600 transition-colors leading-tight">The Ultimate Packing List</h3>
@@ -257,7 +276,7 @@
                 <!-- Guide 3 -->
                 <a href="monsoon-season-guide.html" class="group block">
                     <div class="overflow-hidden rounded-3xl mb-6 aspect-video shadow-lg group-hover:shadow-2xl transition-all duration-500">
-                        <img src="https://phukettravel101.com/images/guide-phuket-monsoon.png" alt="Phuket Monsoon Season" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="800" height="450" loading="lazy">
+                        <img src="https://phukettravel101.com/images/perf/guide-phuket-monsoon-800.jpg" alt="Phuket Monsoon Season" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="800" height="450" loading="lazy">
                     </div>
                     <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest block mb-2">Seasonal Advice</span>
                     <h3 class="text-2xl font-bold mb-3 group-hover:text-blue-600 transition-colors leading-tight">Phuket Monsoon Guide 2026</h3>
@@ -346,44 +365,6 @@
             }
         });
 
-        async function loadRandomHomepageBlogs() {
-            const grid = document.getElementById('homepage-blog-grid');
-            if (!grid) return;
-
-            try {
-                const response = await fetch('blog.html', { cache: 'no-store' });
-                if (!response.ok) return;
-
-                const blogHtml = await response.text();
-                const match = blogHtml.match(/const blogs = (\[[\s\S]*?\]);\s*let activeCategory/);
-                if (!match) return;
-
-                const blogs = new Function(`return ${match[1]};`)();
-                if (!Array.isArray(blogs) || blogs.length < 3) return;
-
-                const selectedBlogs = blogs
-                    .map(blog => ({ blog, sort: Math.random() }))
-                    .sort((a, b) => a.sort - b.sort)
-                    .slice(0, 3)
-                    .map(item => item.blog);
-
-                grid.innerHTML = selectedBlogs.map(blog => `
-                    <a href="${blog.url}" class="group block">
-                        <div class="overflow-hidden rounded-3xl mb-6 aspect-video shadow-lg group-hover:shadow-2xl transition-all duration-500">
-                            <img src="${blog.image}" alt="${blog.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="800" height="450" loading="lazy">
-                        </div>
-                        <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest block mb-2">${blog.category}</span>
-                        <h3 class="text-2xl font-bold mb-3 group-hover:text-blue-600 transition-colors leading-tight">${blog.title}</h3>
-                        <p class="text-gray-500 leading-relaxed line-clamp-2 italic mb-6">${blog.description}</p>
-                        <div class="text-xs font-bold uppercase tracking-widest underline underline-offset-8 decoration-2 decoration-blue-200 group-hover:decoration-blue-600 transition-all">Read Full Guide</div>
-                    </a>
-                `).join('');
-            } catch (error) {
-                console.warn('Could not load random homepage blogs:', error);
-            }
-        }
-
-        loadRandomHomepageBlogs();
     </script>
     <a class="whatsapp-trip-cta" href="https://wa.me/66869643159?text=Hi%20Pom%2C%20I%27d%20like%20help%20planning%20my%20Phuket%20trip." target="_blank" rel="noopener" aria-label="Plan my Phuket trip on WhatsApp with a local expert at +66 86 964 3159">
         <span class="whatsapp-trip-cta__icon" aria-hidden="true">
@@ -393,5 +374,26 @@
         </span>
         <span class="whatsapp-trip-cta__text">Plan My Phuket Trip</span>
     </a>
+    <script>
+      (() => {
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (!menuBtn || !mobileMenu) return;
+        const syncMenuA11y = () => {
+          const isOpen = !mobileMenu.classList.contains('hidden');
+          menuBtn.setAttribute('aria-expanded', String(isOpen));
+          menuBtn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+        };
+        syncMenuA11y();
+        menuBtn.addEventListener('click', () => requestAnimationFrame(syncMenuA11y));
+        document.addEventListener('click', () => requestAnimationFrame(syncMenuA11y));
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') {
+            mobileMenu.classList.add('hidden');
+            syncMenuA11y();
+          }
+        });
+      })();
+    </script>
 </body>
 </html>

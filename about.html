@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DTC7ZR7JVK"></script>
+<!-- Google tag (gtag.js) - delayed for performance -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-DTC7ZR7JVK');
+  function loadGoogleTag(){
+    if (window.__gtagLoaded) return;
+    window.__gtagLoaded = true;
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-DTC7ZR7JVK';
+    document.head.appendChild(script);
+    gtag('js', new Date());
+    gtag('config', 'G-DTC7ZR7JVK');
+  }
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadGoogleTag, { timeout: 3000 });
+  } else {
+    window.addEventListener('load', () => setTimeout(loadGoogleTag, 1500), { once: true });
+  }
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +49,11 @@
     <link rel="icon" type="image/svg+xml" href="https://phukettravel101.com/images/favicon.svg">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
 
     <!-- Production CSS -->
     <link rel="stylesheet" href="styles.css">
@@ -89,9 +104,10 @@
     </script>
 </head>
 <body class="bg-white text-gray-900 selection:bg-black selection:text-white">
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-4">
+    <nav aria-label="Main navigation" class="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-4">
         <div class="max-w-7xl mx-auto glass border border-white/20 rounded-[2rem] md:rounded-full px-6 md:px-8 py-3 flex items-center justify-between shadow-xl shadow-black/5">
             <a href="index.html" class="text-lg md:text-xl font-extrabold tracking-tighter hover:opacity-70 transition-opacity">PHUKET TRAVEL 101</a>
             
@@ -107,8 +123,8 @@
                 <a href="blog.html" class="hidden sm:block bg-black text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gray-800 transition-all active:scale-95">Explore</a>
                 
                 <!-- Mobile Menu Button -->
-                <button id="menu-btn" class="md:hidden p-2 hover:bg-black/5 rounded-xl transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <button id="menu-btn" class="md:hidden p-2 hover:bg-black/5 rounded-xl transition-colors" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" aria-hidden="true" focusable="false" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
                 </button>
@@ -116,7 +132,7 @@
         </div>
 
         <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-4 right-4 mt-2 glass border border-white/20 rounded-3xl p-6 shadow-2xl shadow-black/10 animate-fade-in">
+        <div id="mobile-menu" role="navigation" aria-label="Mobile navigation" class="hidden md:hidden absolute top-full left-4 right-4 mt-2 glass border border-white/20 rounded-3xl p-6 shadow-2xl shadow-black/10 animate-fade-in">
             <div class="flex flex-col gap-6 text-sm font-bold uppercase tracking-widest">
                 <a href="index.html#tools" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Tools</a>
                 <a href="blog.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Guides</a>
@@ -127,7 +143,7 @@
         </div>
     </nav>
 
-    <main class="max-w-7xl mx-auto px-4 md:px-6 pt-24 md:pt-32 pb-20">
+    <main id="main-content" class="max-w-7xl mx-auto px-4 md:px-6 pt-24 md:pt-32 pb-20">
         <!-- Hero Section -->
         <section class="mb-24 text-center">
             <span class="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-[10px] font-bold uppercase tracking-[0.3em] mb-6 border border-blue-100">Our Founder's Story</span>
@@ -280,5 +296,26 @@
         </span>
         <span class="whatsapp-trip-cta__text">Plan My Phuket Trip</span>
     </a>
+    <script>
+      (() => {
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (!menuBtn || !mobileMenu) return;
+        const syncMenuA11y = () => {
+          const isOpen = !mobileMenu.classList.contains('hidden');
+          menuBtn.setAttribute('aria-expanded', String(isOpen));
+          menuBtn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+        };
+        syncMenuA11y();
+        menuBtn.addEventListener('click', () => requestAnimationFrame(syncMenuA11y));
+        document.addEventListener('click', () => requestAnimationFrame(syncMenuA11y));
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') {
+            mobileMenu.classList.add('hidden');
+            syncMenuA11y();
+          }
+        });
+      })();
+    </script>
 </body>
 </html>
