@@ -14,8 +14,36 @@ Use this project workflow when creating or editing a Phuket Travel 101 blog arti
 - Replace every `TEMPLATE_*` token before publishing.
 - Use a clear SEO title, meta description, canonical URL, Open Graph image, and article JSON-LD.
 - Keep article structure scannable with useful headings.
+- Build internal links naturally into the body content so each article acts as a bridge to other relevant Phuket Travel 101 guides.
 - Add related guide cards that match the site style.
 - Prefer existing CSS/classes and local patterns over new styling.
+
+## 2A. Internal Linking Requirements
+
+- Before writing or editing the article, scan `blog.html`, `sitemap.xml`, and relevant existing blog files to identify related articles.
+- Add contextual internal links inside paragraphs where they genuinely help the reader continue planning.
+- Use descriptive anchor text, not generic text such as "click here" or "read more".
+- Prioritize links to high-intent related guides, such as transport, beaches, weather, budget, itinerary, visa, money exchange, packing, and local etiquette pages.
+- Include at least 3-5 contextual internal links in a long-form article when relevant.
+- Also update the "Related Guides" cards with 3 strong internal destinations.
+- Do not force links into unrelated sections. Relevance matters more than count.
+- When editing an existing blog, look for missed bridge opportunities to newer articles and add them where natural.
+
+Good examples:
+
+```html
+If you plan to move around the island without a scooter, read our <a href="grab-vs-bolt-indrive-guide.html">Phuket ride-hailing guide</a> before booking a remote hotel.
+```
+
+```html
+For a full week plan that balances culture, beaches, and islands, use our <a href="phuket-7-day-itinerary.html">7-day Phuket itinerary</a> as your starting point.
+```
+
+Avoid:
+
+```html
+For more information, <a href="blog.html">click here</a>.
+```
 
 ## 3. Generate Blog Images
 
