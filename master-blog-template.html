@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <!--
+        MASTER BLOG TEMPLATE - PHUKET TRAVEL 101
+
+        Copy this file to a new slug, then replace every TEMPLATE_* token.
+        Use absolute R2/custom-domain image URLs:
+        https://phukettravel101.com/images/example-image.png
+    -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTC7ZR7JVK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DTC7ZR7JVK');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>TEMPLATE_SEO_TITLE | PHUKET TRAVEL 101</title>
+    <meta name="title" content="TEMPLATE_SEO_TITLE | PHUKET TRAVEL 101">
+    <meta name="description" content="TEMPLATE_META_DESCRIPTION">
+    <link rel="canonical" href="https://phukettravel101.com/TEMPLATE_SLUG.html">
+    <meta name="keywords" content="TEMPLATE_KEYWORD_1, TEMPLATE_KEYWORD_2, TEMPLATE_KEYWORD_3, Phuket travel guide">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://phukettravel101.com/TEMPLATE_SLUG.html">
+    <meta property="og:title" content="TEMPLATE_OG_TITLE">
+    <meta property="og:description" content="TEMPLATE_OG_DESCRIPTION">
+    <meta property="og:image" content="https://phukettravel101.com/images/TEMPLATE_FEATURE_IMAGE.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="TEMPLATE_OG_TITLE">
+    <meta property="twitter:description" content="TEMPLATE_OG_DESCRIPTION">
+    <meta property="twitter:image" content="https://phukettravel101.com/images/TEMPLATE_FEATURE_IMAGE.png">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="whatsapp-cta.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://phukettravel101.com/#website",
+                "url": "https://phukettravel101.com",
+                "name": "PHUKET TRAVEL 101"
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://phukettravel101.com/#organization",
+                "name": "PHUKET TRAVEL 101",
+                "url": "https://phukettravel101.com",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://phukettravel101.com/images/favicon.svg"
+                }
+            },
+            {
+                "@type": "Article",
+                "headline": "TEMPLATE_ARTICLE_HEADLINE",
+                "image": "https://phukettravel101.com/images/TEMPLATE_FEATURE_IMAGE.png",
+                "datePublished": "TEMPLATE_DATE_YYYY-MM-DD",
+                "dateModified": "TEMPLATE_DATE_YYYY-MM-DD",
+                "author": {"@type": "Person", "name": "Pom"},
+                "publisher": {"@id": "https://phukettravel101.com/#organization"}
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://phukettravel101.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "TEMPLATE_BREADCRUMB_TITLE",
+                        "item": "https://phukettravel101.com/TEMPLATE_SLUG.html"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+    <style>
+        .nav-item { position: relative; transition: all 0.5s ease; }
+        .nav-item.active { opacity: 1 !important; }
+        .nav-item.active .nav-dot { background-color: #3b82f6; color: white; transform: scale(1.1); box-shadow: 0 0 15px rgba(59, 130, 246, 0.3); border-color: #3b82f6; }
+        .nav-dot { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .article-kicker { color: #2563eb; background: #eff6ff; border: 1px solid #dbeafe; border-radius: 999px; display: inline-flex; align-items: center; gap: .45rem; padding: .45rem .75rem; font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+        .article-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; color: #6b7280; font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+        .article-meta span:not(:last-child)::after { content: ""; display: inline-block; width: .25rem; height: .25rem; margin-left: .75rem; border-radius: 999px; background: #d1d5db; vertical-align: middle; }
+        .insight-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; overflow: hidden; border: 1px solid #e5e7eb; border-radius: 1.5rem; background: #e5e7eb; }
+        .insight-card { background: #fff; padding: 1.25rem; }
+        .insight-label { display: block; margin-bottom: .35rem; color: #6b7280; font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+        .insight-value { color: #111827; font-size: .98rem; font-weight: 800; line-height: 1.35; }
+        .day-overview { display: grid; gap: .75rem; margin: 2rem 0 3rem; }
+        .day-overview a { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1rem; padding: 1rem; border: 1px solid #e5e7eb; border-radius: 1rem; background: #fff; text-decoration: none; transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease; }
+        .day-overview a:hover { border-color: #93c5fd; box-shadow: 0 12px 28px #0f172a12; transform: translateY(-1px); }
+        .day-num { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: 999px; background: #111827; color: #fff; font-weight: 900; flex: 0 0 auto; }
+        .day-overview-title { display: block; color: #111827; font-size: .95rem; font-weight: 900; line-height: 1.25; }
+        .day-overview-route { display: block; margin-top: .2rem; color: #6b7280; font-size: .8rem; font-weight: 700; }
+        .day-section { margin: 4rem 0; padding: 2rem 0 0; border-top: 1px solid #e5e7eb; scroll-margin-top: 7rem; }
+        .day-heading { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.75rem; }
+        .day-heading h2 { margin: 0; color: #111827; font-size: clamp(1.7rem, 4vw, 2.35rem); line-height: 1.05; letter-spacing: 0; text-transform: none; }
+        .day-heading p { margin: .4rem 0 0; color: #6b7280; font-size: .82rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+        .reader-note { border: 1px solid #bfdbfe; border-radius: 1.5rem; background: #eff6ff; padding: 1.35rem; color: #1e3a8a; }
+        .reader-note h4 { margin: 0 0 .35rem; color: #1e3a8a; font-size: .8rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+        .reader-note p { margin: 0; color: #1e40af; font-size: .94rem; line-height: 1.65; }
+        .planning-cta { display: grid; gap: 1rem; margin: 3rem 0; padding: 1.5rem; border: 1px solid #dbeafe; border-radius: 1.5rem; background: linear-gradient(135deg, #eff6ff, #fff); }
+        .planning-cta h3 { margin: 0; color: #111827; font-size: 1.2rem; line-height: 1.25; }
+        .planning-cta p { margin: 0; color: #4b5563; font-size: .95rem; line-height: 1.65; }
+        .planning-cta a { display: inline-flex; width: fit-content; align-items: center; gap: .5rem; padding: .85rem 1rem; border-radius: 999px; background: #111827; color: #fff; font-size: .78rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
+        .sidebar-card { border-radius: 1.75rem; border: 1px solid #e5e7eb; background: #fff; box-shadow: 0 18px 45px #0f172a14; padding: 1.5rem; overflow: hidden; }
+        @media (max-width: 768px) {
+            .insight-grid { grid-template-columns: 1fr; }
+            .article-meta { gap: .45rem; }
+            .article-meta span:not(:last-child)::after { margin-left: .45rem; }
+            .day-overview a { grid-template-columns: auto 1fr; }
+            .day-overview a span:last-child { display: none; }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 selection:bg-black selection:text-white font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-4">
+        <div class="max-w-7xl mx-auto glass border border-white/20 rounded-[2rem] md:rounded-full px-6 md:px-8 py-3 flex items-center justify-between shadow-xl shadow-black/5">
+            <a href="index.html" class="text-lg md:text-xl font-extrabold tracking-tighter hover:opacity-70 transition-opacity">PHUKET TRAVEL 101</a>
+
+            <div class="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest">
+                <a href="index.html#tools" class="hover:text-blue-600 transition-colors">Tools</a>
+                <a href="blog.html" class="hover:text-blue-600 transition-colors">Guides</a>
+                <a href="beach-finder.html" class="hover:text-blue-600 transition-colors">Beaches</a>
+                <a href="about.html" class="hover:text-blue-600 transition-colors">About</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="blog.html" class="hidden sm:block bg-black text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gray-800 transition-all active:scale-95">Explore</a>
+                <button id="menu-btn" class="md:hidden p-2 hover:bg-black/5 rounded-xl transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-4 right-4 mt-2 glass border border-white/20 rounded-3xl p-6 shadow-2xl shadow-black/10 animate-fade-in">
+            <div class="flex flex-col gap-6 text-sm font-bold uppercase tracking-widest">
+                <a href="index.html#tools" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Tools</a>
+                <a href="blog.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Guides</a>
+                <a href="beach-finder.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">Beaches</a>
+                <a href="about.html" class="hover:text-blue-600 transition-colors py-2 border-b border-black/5">About</a>
+                <a href="blog.html" class="bg-black text-white px-6 py-4 rounded-2xl text-center">Explore Phuket</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="lg:hidden fixed top-0 left-0 w-full h-1 z-[60] bg-slate-100">
+        <div id="mobile-progress" class="h-full bg-blue-600 transition-all duration-300" style="width: 0%"></div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 md:px-6 pt-24 md:pt-32 pb-20">
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-12">
+            <article class="max-w-4xl mx-auto">
+                <!-- Feature image: replace filename, alt, width, and height after generating final asset. -->
+                <div class="relative mb-12 group">
+                    <img src="https://phukettravel101.com/images/TEMPLATE_FEATURE_IMAGE.png" alt="TEMPLATE_FEATURE_IMAGE_ALT" fetchpriority="high" class="w-full aspect-video md:h-[500px] object-cover rounded-4xl shadow-2xl transition-transform duration-700 group-hover:scale-[1.01]" width="1200" height="675">
+                    <div class="absolute inset-0 rounded-4xl ring-1 ring-inset ring-black/10"></div>
+                </div>
+
+                <header class="mb-10">
+                    <span class="article-kicker">TEMPLATE_CATEGORY_LABEL</span>
+                    <h1 class="text-3xl md:text-6xl font-black tracking-tight mb-8 leading-tight">TEMPLATE_H1_TITLE</h1>
+                    <p class="text-xl text-gray-500 mb-8 leading-relaxed font-medium">TEMPLATE_DEK_INTRO_PARAGRAPH. This short opening should explain who the article is for and the main promise in one or two sentences.</p>
+                    <div class="article-meta">
+                        <span>TEMPLATE_DISPLAY_DATE</span>
+                        <span>TEMPLATE_READ_TIME</span>
+                        <span>By Pom, Local Host</span>
+                    </div>
+                </header>
+
+                <!-- Use this for quick facts. Delete cards that do not fit the article. -->
+                <section class="insight-grid mb-10" aria-label="TEMPLATE_ARTICLE_SHORT_NAME at a glance">
+                    <div class="insight-card">
+                        <span class="insight-label">TEMPLATE_INSIGHT_LABEL_1</span>
+                        <p class="insight-value">TEMPLATE_INSIGHT_VALUE_1</p>
+                    </div>
+                    <div class="insight-card">
+                        <span class="insight-label">TEMPLATE_INSIGHT_LABEL_2</span>
+                        <p class="insight-value">TEMPLATE_INSIGHT_VALUE_2</p>
+                    </div>
+                    <div class="insight-card">
+                        <span class="insight-label">TEMPLATE_INSIGHT_LABEL_3</span>
+                        <p class="insight-value">TEMPLATE_INSIGHT_VALUE_3</p>
+                    </div>
+                    <div class="insight-card">
+                        <span class="insight-label">TEMPLATE_INSIGHT_LABEL_4</span>
+                        <p class="insight-value">TEMPLATE_INSIGHT_VALUE_4</p>
+                    </div>
+                </section>
+
+                <!-- Rename the labels/routes for the article. Seven sections are optional; remove extras if the article is shorter. -->
+                <nav class="day-overview" aria-label="TEMPLATE_ARTICLE_SHORT_NAME overview">
+                    <a href="#day-1"><span class="day-num">1</span><span><strong class="day-overview-title">TEMPLATE_SECTION_1_TITLE</strong><span class="day-overview-route">TEMPLATE_SECTION_1_SUMMARY</span></span><span aria-hidden="true">↓</span></a>
+                    <a href="#day-2"><span class="day-num">2</span><span><strong class="day-overview-title">TEMPLATE_SECTION_2_TITLE</strong><span class="day-overview-route">TEMPLATE_SECTION_2_SUMMARY</span></span><span aria-hidden="true">↓</span></a>
+                    <a href="#day-3"><span class="day-num">3</span><span><strong class="day-overview-title">TEMPLATE_SECTION_3_TITLE</strong><span class="day-overview-route">TEMPLATE_SECTION_3_SUMMARY</span></span><span aria-hidden="true">↓</span></a>
+                    <a href="#day-4"><span class="day-num">4</span><span><strong class="day-overview-title">TEMPLATE_SECTION_4_TITLE</strong><span class="day-overview-route">TEMPLATE_SECTION_4_SUMMARY</span></span><span aria-hidden="true">↓</span></a>
+                    <a href="#day-5"><span class="day-num">5</span><span><strong class="day-overview-title">TEMPLATE_SECTION_5_TITLE</strong><span class="day-overview-route">TEMPLATE_SECTION_5_SUMMARY</span></span><span aria-hidden="true">↓</span></a>
+                    <a href="#day-6"><span class="day-num">6</span><span><strong class="day-overview-title">TEMPLATE_SECTION_6_TITLE</strong><span class="day-overview-route">TEMPLATE_SECTION_6_SUMMARY</span></span><span aria-hidden="true">↓</span></a>
+                    <a href="#day-7"><span class="day-num">7</span><span><strong class="day-overview-title">TEMPLATE_SECTION_7_TITLE</strong><span class="day-overview-route">TEMPLATE_SECTION_7_SUMMARY</span></span><span aria-hidden="true">↓</span></a>
+                </nav>
+
+                <div class="prose prose-sm md:prose-lg max-w-none prose-img:rounded-3xl prose-headings:font-black prose-a:text-blue-600">
+                    <h2 id="intro">TEMPLATE_INTRO_HEADING</h2>
+                    <p>TEMPLATE_INTRO_PARAGRAPH_1. Replace this with a direct, useful opening that answers the reader's main question quickly.</p>
+                    <p>TEMPLATE_INTRO_PARAGRAPH_2. Add local context, who this advice is best for, and what mistake the article helps the reader avoid.</p>
+
+                    <div class="reader-note">
+                        <h4>TEMPLATE_NOTE_LABEL</h4>
+                        <p>TEMPLATE_NOTE_TEXT. Use this for a local reality check, safety note, booking warning, weather caveat, or money-saving tip.</p>
+                    </div>
+
+                    <hr class="my-16 border-slate-100">
+
+                    <section id="day-1" class="timeline-item day-section">
+                        <div class="day-heading"><span class="day-num">1</span><div><h2>TEMPLATE_SECTION_1_TITLE</h2><p>TEMPLATE_SECTION_1_SUMMARY</p></div></div>
+                        <p>TEMPLATE_SECTION_1_PARAGRAPH. Use this section to establish the first major point.</p>
+                        <h3>TEMPLATE_SECTION_1_SUBHEAD</h3>
+                        <p>TEMPLATE_SECTION_1_DETAIL. Link related internal guides where helpful, for example <a href="grab-vs-bolt-indrive-guide.html">Phuket ride-hailing guide</a>.</p>
+                    </section>
+
+                    <section id="day-2" class="timeline-item day-section">
+                        <div class="day-heading"><span class="day-num">2</span><div><h2>TEMPLATE_SECTION_2_TITLE</h2><p>TEMPLATE_SECTION_2_SUMMARY</p></div></div>
+                        <p>TEMPLATE_SECTION_2_PARAGRAPH. Keep advice practical and specific to Phuket.</p>
+                        <h3>TEMPLATE_SECTION_2_SUBHEAD</h3>
+                        <p>TEMPLATE_SECTION_2_DETAIL.</p>
+                        <figure>
+                            <img src="https://phukettravel101.com/images/TEMPLATE_BODY_IMAGE_1.png" alt="TEMPLATE_BODY_IMAGE_1_ALT" loading="lazy" decoding="async" width="1200" height="675">
+                        </figure>
+                    </section>
+
+                    <section id="day-3" class="timeline-item day-section">
+                        <div class="day-heading"><span class="day-num">3</span><div><h2>TEMPLATE_SECTION_3_TITLE</h2><p>TEMPLATE_SECTION_3_SUMMARY</p></div></div>
+                        <p>TEMPLATE_SECTION_3_PARAGRAPH.</p>
+                        <h3>TEMPLATE_SECTION_3_SUBHEAD</h3>
+                        <p>TEMPLATE_SECTION_3_DETAIL.</p>
+                    </section>
+
+                    <section id="day-4" class="timeline-item day-section">
+                        <div class="day-heading"><span class="day-num">4</span><div><h2>TEMPLATE_SECTION_4_TITLE</h2><p>TEMPLATE_SECTION_4_SUMMARY</p></div></div>
+                        <p>TEMPLATE_SECTION_4_PARAGRAPH.</p>
+                        <h3>TEMPLATE_SECTION_4_SUBHEAD</h3>
+                        <p>TEMPLATE_SECTION_4_DETAIL.</p>
+                        <figure>
+                            <img src="https://phukettravel101.com/images/TEMPLATE_BODY_IMAGE_2.png" alt="TEMPLATE_BODY_IMAGE_2_ALT" loading="lazy" decoding="async" width="1200" height="675">
+                        </figure>
+                    </section>
+
+                    <div class="planning-cta">
+                        <div>
+                            <h3>TEMPLATE_CTA_HEADING</h3>
+                            <p>TEMPLATE_CTA_COPY. Make this specific to the article topic and the help Pom can provide.</p>
+                        </div>
+                        <a href="https://wa.me/66869643159?text=TEMPLATE_WHATSAPP_ENCODED_MESSAGE" target="_blank" rel="noopener">Ask a Local Expert</a>
+                    </div>
+
+                    <section id="day-5" class="timeline-item day-section">
+                        <div class="day-heading"><span class="day-num">5</span><div><h2>TEMPLATE_SECTION_5_TITLE</h2><p>TEMPLATE_SECTION_5_SUMMARY</p></div></div>
+                        <p>TEMPLATE_SECTION_5_PARAGRAPH.</p>
+                        <h3>TEMPLATE_SECTION_5_SUBHEAD</h3>
+                        <p>TEMPLATE_SECTION_5_DETAIL.</p>
+                    </section>
+
+                    <section id="day-6" class="timeline-item day-section">
+                        <div class="day-heading"><span class="day-num">6</span><div><h2>TEMPLATE_SECTION_6_TITLE</h2><p>TEMPLATE_SECTION_6_SUMMARY</p></div></div>
+                        <p>TEMPLATE_SECTION_6_PARAGRAPH.</p>
+                        <h3>TEMPLATE_SECTION_6_SUBHEAD</h3>
+                        <p>TEMPLATE_SECTION_6_DETAIL.</p>
+                        <figure>
+                            <img src="https://phukettravel101.com/images/TEMPLATE_BODY_IMAGE_3.png" alt="TEMPLATE_BODY_IMAGE_3_ALT" loading="lazy" decoding="async" width="1200" height="675">
+                        </figure>
+                    </section>
+
+                    <section id="day-7" class="timeline-item day-section">
+                        <div class="day-heading"><span class="day-num">7</span><div><h2>TEMPLATE_SECTION_7_TITLE</h2><p>TEMPLATE_SECTION_7_SUMMARY</p></div></div>
+                        <p>TEMPLATE_SECTION_7_PARAGRAPH.</p>
+                        <h3>TEMPLATE_SECTION_7_SUBHEAD</h3>
+                        <p>TEMPLATE_SECTION_7_DETAIL.</p>
+                    </section>
+
+                    <h2 id="final-advice">TEMPLATE_FINAL_HEADING</h2>
+                    <p>TEMPLATE_FINAL_PARAGRAPH. End with a useful local recommendation, not a generic summary.</p>
+
+                    <h2 id="sources">Research Notes</h2>
+                    <p>TEMPLATE_RESEARCH_NOTES. Mention official sources, current checks, or local verification when the topic depends on changing facts.</p>
+                </div>
+
+                <!-- Social Sharing -->
+                <div class="mt-16 pt-8 border-t border-gray-100">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+                        <h3 class="text-sm font-bold uppercase tracking-widest text-gray-400">Share this guide</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <button onclick="window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(document.title), '_blank')" class="flex items-center gap-2 px-4 py-2 bg-gray-50 hover:bg-blue-50 hover:text-blue-600 rounded-full text-sm font-bold transition-all">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                                Twitter
+                            </button>
+                            <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank')" class="flex items-center gap-2 px-4 py-2 bg-gray-50 hover:bg-blue-50 hover:text-blue-600 rounded-full text-sm font-bold transition-all">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+                                Facebook
+                            </button>
+                            <button onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied to clipboard!')" class="flex items-center gap-2 px-4 py-2 bg-gray-50 hover:bg-blue-50 hover:text-blue-600 rounded-full text-sm font-bold transition-all">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+                                Copy Link
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Blogs: replace all three cards. -->
+                <div class="mt-24">
+                    <h2 class="text-2xl font-black tracking-tight mb-8">Related Guides</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <a href="TEMPLATE_RELATED_1_URL.html" class="group">
+                            <div class="relative overflow-hidden rounded-2xl mb-4">
+                                <img src="https://phukettravel101.com/images/TEMPLATE_RELATED_1_IMAGE.png" alt="TEMPLATE_RELATED_1_ALT" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-blue-600 mb-2 block">TEMPLATE_RELATED_1_CATEGORY</span>
+                            <h3 class="font-bold leading-tight group-hover:text-blue-600 transition-colors">TEMPLATE_RELATED_1_TITLE</h3>
+                        </a>
+                        <a href="TEMPLATE_RELATED_2_URL.html" class="group">
+                            <div class="relative overflow-hidden rounded-2xl mb-4">
+                                <img src="https://phukettravel101.com/images/TEMPLATE_RELATED_2_IMAGE.png" alt="TEMPLATE_RELATED_2_ALT" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-blue-600 mb-2 block">TEMPLATE_RELATED_2_CATEGORY</span>
+                            <h3 class="font-bold leading-tight group-hover:text-blue-600 transition-colors">TEMPLATE_RELATED_2_TITLE</h3>
+                        </a>
+                        <a href="TEMPLATE_RELATED_3_URL.html" class="group">
+                            <div class="relative overflow-hidden rounded-2xl mb-4">
+                                <img src="https://phukettravel101.com/images/TEMPLATE_RELATED_3_IMAGE.png" alt="TEMPLATE_RELATED_3_ALT" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-blue-600 mb-2 block">TEMPLATE_RELATED_3_CATEGORY</span>
+                            <h3 class="font-bold leading-tight group-hover:text-blue-600 transition-colors">TEMPLATE_RELATED_3_TITLE</h3>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Sticky Sidebar -->
+            <aside class="hidden lg:block">
+                <div class="sticky top-32">
+                    <div class="sidebar-card">
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6 flex items-center gap-2">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
+                            TEMPLATE_SIDEBAR_TITLE
+                        </h4>
+
+                        <div class="rounded-2xl bg-slate-50 border border-slate-100 p-5 mb-8">
+                            <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">TEMPLATE_SIDEBAR_BOX_LABEL</p>
+                            <div class="grid gap-2 text-xs font-black text-gray-900">
+                                <span>TEMPLATE_SIDEBAR_FACT_1</span>
+                                <span>TEMPLATE_SIDEBAR_FACT_2</span>
+                                <span>TEMPLATE_SIDEBAR_FACT_3</span>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="absolute left-4 top-4 bottom-4 w-0.5 bg-slate-100 -translate-x-1/2"></div>
+                            <div class="space-y-5 relative">
+                                <div id="nav-day-1" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500"><span class="nav-dot relative z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold border-4 border-white">1</span><span class="text-[10px] font-bold uppercase tracking-widest">TEMPLATE_NAV_1</span></div>
+                                <div id="nav-day-2" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500"><span class="nav-dot relative z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold border-4 border-white">2</span><span class="text-[10px] font-bold uppercase tracking-widest">TEMPLATE_NAV_2</span></div>
+                                <div id="nav-day-3" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500"><span class="nav-dot relative z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold border-4 border-white">3</span><span class="text-[10px] font-bold uppercase tracking-widest">TEMPLATE_NAV_3</span></div>
+                                <div id="nav-day-4" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500"><span class="nav-dot relative z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold border-4 border-white">4</span><span class="text-[10px] font-bold uppercase tracking-widest">TEMPLATE_NAV_4</span></div>
+                                <div id="nav-day-5" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500"><span class="nav-dot relative z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold border-4 border-white">5</span><span class="text-[10px] font-bold uppercase tracking-widest">TEMPLATE_NAV_5</span></div>
+                                <div id="nav-day-6" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500"><span class="nav-dot relative z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold border-4 border-white">6</span><span class="text-[10px] font-bold uppercase tracking-widest">TEMPLATE_NAV_6</span></div>
+                                <div id="nav-day-7" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500"><span class="nav-dot relative z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold border-4 border-white">7</span><span class="text-[10px] font-bold uppercase tracking-widest">TEMPLATE_NAV_7</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-20 md:py-24 px-4 md:px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-16 mb-16">
+            <div class="md:col-span-2">
+                <a href="index.html" class="text-3xl font-black tracking-tighter mb-6 block">PHUKET TRAVEL 101</a>
+                <p class="text-gray-400 max-w-sm leading-relaxed">
+                    Helping you discover the authentic side of Thailand's most famous island since 2026.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-widest text-white/40 mb-6">Interactive Tools</h4>
+                <ul class="space-y-4 text-sm font-bold">
+                    <li><a href="beach-finder.html" class="hover:text-blue-500 transition-colors">Beach Finder</a></li>
+                    <li><a href="budget-calculator.html" class="hover:text-blue-500 transition-colors">Budget Calculator</a></li>
+                    <li><a href="visa-checker.html" class="hover:text-blue-500 transition-colors">Visa Checker</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-widest text-white/40 mb-6">Content</h4>
+                <ul class="space-y-4 text-sm font-bold">
+                    <li><a href="blog.html" class="hover:text-blue-500 transition-colors">Travel Guides</a></li>
+                    <li><a href="blog.html" class="hover:text-blue-500 transition-colors">Local Secrets</a></li>
+                    <li><a href="blog.html" class="hover:text-blue-500 transition-colors">Photography</a></li>
+                    <li><a href="about.html" class="hover:text-blue-500 transition-colors">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-bold uppercase tracking-widest text-white/30">
+            <p>&copy; 2026 PHUKET TRAVEL 101 • All Rights Reserved</p>
+            <div class="flex gap-8">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    const dayNum = id.split('-')[1];
+
+                    document.querySelectorAll('.nav-item').forEach(el => {
+                        el.classList.remove('active');
+                        el.classList.add('opacity-30');
+                    });
+
+                    const nav = document.getElementById(`nav-day-${dayNum}`);
+                    if (nav) {
+                        nav.classList.add('active');
+                        nav.classList.remove('opacity-30');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section[id^="day-"]').forEach(section => {
+            observer.observe(section);
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth < 1024) {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                const progressBar = document.getElementById('mobile-progress');
+                if (progressBar) progressBar.style.width = scrolled + "%";
+            }
+        });
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+            } else {
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        });
+    </script>
+    <a class="whatsapp-trip-cta" href="https://wa.me/66869643159?text=Hi%20Pom%2C%20I%27d%20like%20help%20planning%20my%20Phuket%20trip." target="_blank" rel="noopener" aria-label="Plan my Phuket trip on WhatsApp with a local expert at +66 86 964 3159">
+        <span class="whatsapp-trip-cta__icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" focusable="false">
+                <path d="M16.04 3.2A12.72 12.72 0 0 0 5.17 22.55L3.2 29l6.62-1.9A12.7 12.7 0 1 0 16.04 3.2Zm0 2.31a10.39 10.39 0 0 1 8.84 15.88 10.35 10.35 0 0 1-13.88 3.58l-.47-.24-3.94 1.13 1.17-3.82-.27-.49A10.4 10.4 0 0 1 16.04 5.51Zm-4.55 4.83c-.25 0-.64.1-.97.47-.33.37-1.28 1.25-1.28 3.05s1.31 3.54 1.49 3.78c.18.25 2.52 4.04 6.25 5.5 3.1 1.22 3.74.98 4.41.92.68-.06 2.18-.89 2.49-1.75.31-.86.31-1.6.22-1.75-.09-.15-.34-.24-.71-.43-.37-.18-2.18-1.08-2.52-1.2-.34-.12-.58-.18-.83.18-.25.37-.95 1.2-1.17 1.45-.21.24-.43.28-.8.09-.37-.18-1.55-.57-2.96-1.83-1.09-.98-1.83-2.18-2.05-2.55-.21-.37-.02-.57.16-.75.17-.16.37-.43.55-.64.18-.21.25-.37.37-.61.12-.24.06-.46-.03-.64-.09-.18-.82-1.98-1.13-2.71-.3-.71-.6-.61-.83-.62h-.71Z"/>
+            </svg>
+        </span>
+        <span class="whatsapp-trip-cta__text">Plan My Phuket Trip</span>
+    </a>
+</body>
+</html>

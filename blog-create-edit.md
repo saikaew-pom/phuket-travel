@@ -10,6 +10,8 @@ Use this project workflow when creating or editing a Phuket Travel 101 blog arti
 
 ## 2. Create or Edit the Blog Page
 
+- For new long-form articles, copy `master-blog-template.html` to the final article slug first.
+- Replace every `TEMPLATE_*` token before publishing.
 - Use a clear SEO title, meta description, canonical URL, Open Graph image, and article JSON-LD.
 - Keep article structure scannable with useful headings.
 - Add related guide cards that match the site style.
