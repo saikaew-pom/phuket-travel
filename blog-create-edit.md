@@ -2,6 +2,18 @@
 
 Use this project workflow when creating or editing a Phuket Travel 101 blog article.
 
+## Startup Checklist
+
+Before starting a new blog task:
+
+1. Confirm the local repo is on the correct branch with `git status -sb`.
+2. Confirm `origin` still points to the Phuket Travel 101 GitHub repo.
+3. Check the closest existing article patterns before writing new HTML.
+4. Decide whether the article needs fresh generated images.
+5. If images are needed, generate them into `images/generated/` first.
+6. Upload new images to Cloudflare R2 and verify the public R2 URL returns `200`.
+7. Only then point the article HTML and blog card image fields at the live R2 URLs.
+
 ## 1. Inspect Existing Patterns
 
 - Read the closest existing blog article HTML before editing.
@@ -49,7 +61,8 @@ For more information, <a href="blog.html">click here</a>.
 
 - Generate a feature image for the article.
 - Generate 3-4 body images when the article benefits from supporting visuals.
-- Save final images into `images/` with descriptive filenames.
+- Save working image files into `images/generated/` with descriptive filenames.
+- Keep the article-specific image set fresh. Do not reuse older site images unless the user explicitly wants that.
 - Use absolute image URLs in HTML:
 
 ```html
@@ -67,21 +80,24 @@ Update all relevant locations:
 
 ## 4. Upload Images to Cloudflare R2
 
-- Upload new image files from `images/` to the `phukettravel101` R2 bucket.
+- Upload the new image files from `images/generated/` to the `phukettravel101` R2 bucket.
 - Preserve object keys such as:
 
 ```text
-images/example-image.png
+images/generated/example-image.png
 ```
 
 - Do not paste long-lived secrets into chat. Prefer local environment variables, local config, or a freshly rotated temporary key.
-- After upload, test at least one public URL:
+- After upload, test the live public R2 URL:
 
 ```bash
-curl -I https://phukettravel101.com/images/example-image.png
+curl -I https://pub-<bucket-id>.r2.dev/images/generated/example-image.png
 ```
 
 Expected result: `HTTP 200` with the correct image content type.
+
+- If the `phukettravel101.com/images/...` URL returns `404`, do not assume the file is missing from the repo. Check the live R2 URL first.
+- Only consider the image step complete once the public R2 URL returns `200`.
 
 ## 5. Update Site Discovery
 
@@ -89,6 +105,7 @@ Expected result: `HTTP 200` with the correct image content type.
 - Add homepage placement in `index.html` only when appropriate.
 - Add or update the URL in `sitemap.xml`.
 - Confirm the canonical URL matches the final file name.
+- Point the article HTML and blog card image fields at the live R2 URL, not the local workspace path.
 
 ## 6. Verify Before Completion
 
@@ -104,7 +121,7 @@ For new article images, confirm:
 
 - Local image files exist in `images/`.
 - Public image URLs return `HTTP 200`.
-- HTML references use `https://phukettravel101.com/images/...`.
+- HTML references use the live R2 URL for the generated article images.
 - The article is linked from `blog.html`.
 - `sitemap.xml` includes the article URL.
 
