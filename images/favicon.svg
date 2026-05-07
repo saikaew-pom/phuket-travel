@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PHUKET TRAVEL 101">
+  <rect width="64" height="64" rx="14" fill="#0f172a"/>
+  <path d="M12 42c7-9 14-13 21-13s13 4 19 13" fill="none" stroke="#38bdf8" stroke-width="5" stroke-linecap="round"/>
+  <path d="M32 14c4 7 6 15 6 25M32 14c-5 5-8 12-10 21M32 14c6 3 11 8 15 15" fill="none" stroke="#facc15" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="32" cy="14" r="4" fill="#facc15"/>
+</svg>

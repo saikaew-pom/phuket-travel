@@ -17,22 +17,23 @@
     <title>Discover the Real Phuket | PHUKET TRAVEL 101</title>
     <meta name="title" content="Discover the Real Phuket | PHUKET TRAVEL 101">
     <meta name="description" content="Plan your perfect trip with PHUKET TRAVEL 101. Discover hidden coves, local secrets, and essential 2026 travel tips for an authentic Phuket island experience.">
+    <link rel="canonical" href="https://phukettravel101.com/">
     <meta name="keywords" content="Phuket travel guide, Phuket beaches, Thailand travel, Patong Beach, Phuket budget, Phuket visa 2026">
     <meta name="author" content="PHUKET TRAVEL 101">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://phukettravel101.com/index.html">
+    <meta property="og:url" content="https://phukettravel101.com/">
     <meta property="og:title" content="Discover the Real Phuket | PHUKET TRAVEL 101">
     <meta property="og:description" content="Plan your perfect trip with PHUKET TRAVEL 101. Discover hidden coves, local secrets, and essential 2026 travel tips for an authentic Phuket experience.">
-    <meta property="og:image" content="images/homepage-header.png">
+    <meta property="og:image" content="https://phukettravel101.com/images/homepage-header-optimized.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://phukettravel101.com/index.html">
+    <meta property="twitter:url" content="https://phukettravel101.com/">
     <meta property="twitter:title" content="Discover the Real Phuket | PHUKET TRAVEL 101">
     <meta property="twitter:description" content="Plan your perfect trip with PHUKET TRAVEL 101. Discover hidden coves, local secrets, and essential 2026 travel tips for an authentic Phuket experience.">
-    <meta property="twitter:image" content="images/homepage-header.png">
+    <meta property="twitter:image" content="https://phukettravel101.com/images/homepage-header-optimized.jpg">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
@@ -42,6 +43,7 @@
 
     <!-- Production CSS -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="whatsapp-cta.css">
 
     <script type="application/ld+json">
     {
@@ -65,6 +67,23 @@
                 "@type": "ImageObject",
                 "url": "https://phukettravel101.com/images/favicon.svg"
             }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://phukettravel101.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Discover the Real Phuket",
+                    "item": "https://phukettravel101.com/"
+                }
+            ]
         }
     ]
 }
@@ -113,7 +132,7 @@
     <section class="relative h-[95vh] flex items-center justify-center overflow-hidden px-4 md:px-6 pt-24 md:pt-32 pb-20">
         <div class="absolute inset-4 z-0 rounded-4xl overflow-hidden">
             <img 
-                src="images/homepage-header.png" 
+                src="images/homepage-header-optimized.jpg"
                 alt="Stunning Phuket Beach Landscape" 
                 class="w-full h-full object-cover"
                 width="1920"
@@ -199,20 +218,20 @@
         </div>
     </section>
 
-    <!-- Recent Guides -->
+    <!-- Featured Guides -->
     <section class="py-20 md:py-32 px-4 md:px-6 bg-gray-50 -mx-4 md:-mx-6">
         <div class="max-w-7xl mx-auto">
             <div class="flex items-center justify-between mb-16">
                 <div>
-                    <h2 class="text-4xl font-bold tracking-tight">Recent Travel Guides</h2>
-                    <p class="text-gray-500 mt-2 text-lg">Expert advice for your next Thai adventure.</p>
+                    <h2 class="text-4xl font-bold tracking-tight">Featured Travel Guides</h2>
+                    <p class="text-gray-500 mt-2 text-lg">Fresh picks from our Phuket guide library.</p>
                 </div>
                 <a href="blog.html" class="hidden sm:inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest hover:opacity-70 transition-opacity">
                     View All Guides →
                 </a>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div id="homepage-blog-grid" class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <!-- Guide 1 -->
                 <a href="phuket-7-day-itinerary.html" class="group block">
                     <div class="overflow-hidden rounded-3xl mb-6 aspect-video shadow-lg group-hover:shadow-2xl transition-all duration-500">
@@ -326,7 +345,53 @@
                 menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
             }
         });
+
+        async function loadRandomHomepageBlogs() {
+            const grid = document.getElementById('homepage-blog-grid');
+            if (!grid) return;
+
+            try {
+                const response = await fetch('blog.html', { cache: 'no-store' });
+                if (!response.ok) return;
+
+                const blogHtml = await response.text();
+                const match = blogHtml.match(/const blogs = (\[[\s\S]*?\]);\s*let activeCategory/);
+                if (!match) return;
+
+                const blogs = new Function(`return ${match[1]};`)();
+                if (!Array.isArray(blogs) || blogs.length < 3) return;
+
+                const selectedBlogs = blogs
+                    .map(blog => ({ blog, sort: Math.random() }))
+                    .sort((a, b) => a.sort - b.sort)
+                    .slice(0, 3)
+                    .map(item => item.blog);
+
+                grid.innerHTML = selectedBlogs.map(blog => `
+                    <a href="${blog.url}" class="group block">
+                        <div class="overflow-hidden rounded-3xl mb-6 aspect-video shadow-lg group-hover:shadow-2xl transition-all duration-500">
+                            <img src="${blog.image}" alt="${blog.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="800" height="450" loading="lazy">
+                        </div>
+                        <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest block mb-2">${blog.category}</span>
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-blue-600 transition-colors leading-tight">${blog.title}</h3>
+                        <p class="text-gray-500 leading-relaxed line-clamp-2 italic mb-6">${blog.description}</p>
+                        <div class="text-xs font-bold uppercase tracking-widest underline underline-offset-8 decoration-2 decoration-blue-200 group-hover:decoration-blue-600 transition-all">Read Full Guide</div>
+                    </a>
+                `).join('');
+            } catch (error) {
+                console.warn('Could not load random homepage blogs:', error);
+            }
+        }
+
+        loadRandomHomepageBlogs();
     </script>
+    <a class="whatsapp-trip-cta" href="https://wa.me/66869643159?text=Hi%20Pom%2C%20I%27d%20like%20help%20planning%20my%20Phuket%20trip." target="_blank" rel="noopener" aria-label="Plan my Phuket trip on WhatsApp with a local expert at +66 86 964 3159">
+        <span class="whatsapp-trip-cta__icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" focusable="false">
+                <path d="M16.04 3.2A12.72 12.72 0 0 0 5.17 22.55L3.2 29l6.62-1.9A12.7 12.7 0 1 0 16.04 3.2Zm0 2.31a10.39 10.39 0 0 1 8.84 15.88 10.35 10.35 0 0 1-13.88 3.58l-.47-.24-3.94 1.13 1.17-3.82-.27-.49A10.4 10.4 0 0 1 16.04 5.51Zm-4.55 4.83c-.25 0-.64.1-.97.47-.33.37-1.28 1.25-1.28 3.05s1.31 3.54 1.49 3.78c.18.25 2.52 4.04 6.25 5.5 3.1 1.22 3.74.98 4.41.92.68-.06 2.18-.89 2.49-1.75.31-.86.31-1.6.22-1.75-.09-.15-.34-.24-.71-.43-.37-.18-2.18-1.08-2.52-1.2-.34-.12-.58-.18-.83.18-.25.37-.95 1.2-1.17 1.45-.21.24-.43.28-.8.09-.37-.18-1.55-.57-2.96-1.83-1.09-.98-1.83-2.18-2.05-2.55-.21-.37-.02-.57.16-.75.17-.16.37-.43.55-.64.18-.21.25-.37.37-.61.12-.24.06-.46-.03-.64-.09-.18-.82-1.98-1.13-2.71-.3-.71-.6-.61-.83-.62h-.71Z"/>
+            </svg>
+        </span>
+        <span class="whatsapp-trip-cta__text">Plan My Phuket Trip</span>
+    </a>
 </body>
 </html>
-/html>
