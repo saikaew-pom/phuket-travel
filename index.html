@@ -20,7 +20,7 @@
   } else {
     window.addEventListener('load', () => setTimeout(loadGoogleTag, 1500), { once: true });
   }
-</script>
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -250,39 +250,8 @@
                 </a>
             </div>
 
-            <div id="homepage-blog-grid" class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <!-- Guide 1 -->
-                <a href="phuket-7-day-itinerary.html" class="group block">
-                    <div class="overflow-hidden rounded-3xl mb-6 aspect-video shadow-lg group-hover:shadow-2xl transition-all duration-500">
-                        <img src="https://phukettravel101.com/images/perf/phuket-7-day-itinerary-800.jpg" alt="Phuket 7-Day Itinerary" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="800" height="600" loading="lazy">
-                    </div>
-                    <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest block mb-2">Expert Itinerary</span>
-                    <h3 class="text-2xl font-bold mb-3 group-hover:text-blue-600 transition-colors leading-tight">7 Days in Phuket: The 2026 Guide</h3>
-                    <p class="text-gray-500 leading-relaxed line-clamp-2 italic mb-6">Master your first trip with our expert itinerary. Includes an interactive sticky map tracking your daily journey...</p>
-                    <div class="text-xs font-bold uppercase tracking-widest underline underline-offset-8 decoration-2 decoration-blue-200 group-hover:decoration-blue-600 transition-all">Read Full Guide</div>
-                </a>
-
-                <!-- Guide 2 -->
-                <a href="phuket-packing-list.html" class="group block">
-                    <div class="overflow-hidden rounded-3xl mb-6 aspect-video shadow-lg group-hover:shadow-2xl transition-all duration-500">
-                        <img src="https://phukettravel101.com/images/perf/phuket-packing-list-800.jpg" alt="Phuket Packing List Guide" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="800" height="600" loading="lazy">
-                    </div>
-                    <span class="text-[10px] font-bold text-teal-600 uppercase tracking-widest block mb-2">Master Guide</span>
-                    <h3 class="text-2xl font-bold mb-3 group-hover:text-teal-600 transition-colors leading-tight">The Ultimate Packing List</h3>
-                    <p class="text-gray-500 leading-relaxed line-clamp-2 italic mb-6">Don't overpack. Our expert-led guide covers exactly what you need for Phuket's heat and monsoon rain. Includes an interactive checklist...</p>
-                    <div class="text-xs font-bold uppercase tracking-widest underline underline-offset-8 decoration-2 decoration-teal-200 group-hover:decoration-teal-600 transition-all">Read Full Guide</div>
-                </a>
-
-                <!-- Guide 3 -->
-                <a href="monsoon-season-guide.html" class="group block">
-                    <div class="overflow-hidden rounded-3xl mb-6 aspect-video shadow-lg group-hover:shadow-2xl transition-all duration-500">
-                        <img src="https://phukettravel101.com/images/perf/guide-phuket-monsoon-800.jpg" alt="Phuket Monsoon Season" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="800" height="450" loading="lazy">
-                    </div>
-                    <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest block mb-2">Seasonal Advice</span>
-                    <h3 class="text-2xl font-bold mb-3 group-hover:text-blue-600 transition-colors leading-tight">Phuket Monsoon Guide 2026</h3>
-                    <p class="text-gray-500 leading-relaxed line-clamp-2 italic mb-6">Is it worth visiting from May to October? We weigh the luxury savings against the tropical rain...</p>
-                    <div class="text-xs font-bold uppercase tracking-widest underline underline-offset-8 decoration-2 decoration-blue-200 group-hover:decoration-blue-600 transition-all">Read Full Guide</div>
-                </a>
+            <div id="homepage-blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                <!-- Latest guides render from scripts/blog-data.js -->
             </div>
         </div>
     </section>
@@ -341,6 +310,7 @@
         </div>
     </footer>
 
+    <script src="scripts/blog-data.js"></script>
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -364,6 +334,29 @@
                 menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
             }
         });
+
+        function renderHomepageBlogs() {
+            const grid = document.getElementById('homepage-blog-grid');
+            if (!grid || !window.PHUKET_BLOGS) return;
+            const latestBlogs = window.PHUKET_BLOGS
+                .slice()
+                .sort((a, b) => (b.date || '').localeCompare(a.date || '') || a.title.localeCompare(b.title))
+                .slice(0, 6);
+
+            grid.innerHTML = latestBlogs.map((blog) => [
+                `<a href="${blog.url}" class="group block">`,
+                '<div class="overflow-hidden rounded-3xl mb-6 aspect-video shadow-lg group-hover:shadow-2xl transition-all duration-500">',
+                `<img src="${blog.image}" alt="${blog.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="800" height="450" loading="lazy">`,
+                '</div>',
+                `<span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest block mb-2">${blog.category}</span>`,
+                `<h3 class="text-xl md:text-2xl font-bold mb-3 group-hover:text-blue-600 transition-colors leading-tight">${blog.title}</h3>`,
+                `<p class="text-gray-500 leading-relaxed line-clamp-2 italic mb-6">${blog.description}</p>`,
+                '<div class="text-xs font-bold uppercase tracking-widest underline underline-offset-8 decoration-2 decoration-blue-200 group-hover:decoration-blue-600 transition-all">Read Full Guide</div>',
+                '</a>'
+            ].join('')).join('');
+        }
+
+        renderHomepageBlogs();
 
     </script>
     <a class="whatsapp-trip-cta" href="https://wa.me/66869643159?text=Hi%20Pom%2C%20I%27d%20like%20help%20planning%20my%20Phuket%20trip." target="_blank" rel="noopener" aria-label="Plan my Phuket trip on WhatsApp with a local expert at +66 86 964 3159">
