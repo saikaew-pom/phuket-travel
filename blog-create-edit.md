@@ -180,21 +180,75 @@ Only do this when the article uses newly generated images.
 Workflow:
 
 1. Upload the final generated files from `images/generated/` to the `phukettravel101` R2 bucket.
-2. Preserve object keys such as:
+2. Use the R2 S3-compatible upload path by default. Preserve object keys such as:
 
 ```text
 images/generated/example-image.jpg
 ```
 
+Example single-file upload:
+
+```bash
+f="images/generated/example-image.jpg"
+ct="image/jpeg"
+curl -sS -o /dev/null -w '%{http_code}\n' \
+  -X PUT \
+  --aws-sigv4 'aws:amz:auto:s3' \
+  --user "$R2_ACCESS_KEY_ID:$R2_SECRET_ACCESS_KEY" \
+  --upload-file "$f" \
+  -H "Content-Type: $ct" \
+  -H "Cache-Control: public, max-age=31536000, immutable" \
+  "https://8d3b88fb762aaac5e9feca0421310dfb.r2.cloudflarestorage.com/phukettravel101/$f"
+```
+
+Expected upload result: `200`.
+
+Example batch upload for generated images added in the latest commit:
+
+```bash
+for f in $(git show --name-only --format= HEAD -- images/generated | sort); do
+  case "$f" in
+    *.jpg) ct='image/jpeg' ;;
+    *.png) ct='image/png' ;;
+    *) ct='application/octet-stream' ;;
+  esac
+  code=$(/usr/bin/curl -sS -o /dev/null -w '%{http_code}' \
+    -X PUT \
+    --aws-sigv4 'aws:amz:auto:s3' \
+    --user "$R2_ACCESS_KEY_ID:$R2_SECRET_ACCESS_KEY" \
+    --upload-file "$f" \
+    -H "Content-Type: $ct" \
+    -H "Cache-Control: public, max-age=31536000, immutable" \
+    "https://8d3b88fb762aaac5e9feca0421310dfb.r2.cloudflarestorage.com/phukettravel101/$f")
+  printf '%s %s\n' "$code" "$f"
+done
+```
+
 3. Verify the public R2 URL:
 
 ```bash
-curl -I https://pub-<bucket-id>.r2.dev/images/generated/example-image.jpg
+curl -I https://pub-d7a7c52607b0453182010699e6e55dc7.r2.dev/images/generated/example-image.jpg
 ```
 
 Expected result: `HTTP 200` with the correct image content type.
 
+Batch verification:
+
+```bash
+for f in $(git show --name-only --format= HEAD -- images/generated | sort); do
+  code=$(/usr/bin/curl -s -o /dev/null -w '%{http_code}' "https://pub-d7a7c52607b0453182010699e6e55dc7.r2.dev/$f")
+  printf '%s %s\n' "$code" "$f"
+done
+```
+
+All files should return `200`.
+
 4. Only then update the article to use the live URL.
+
+Wrangler note:
+
+- `wrangler r2 object put` can fail with `403 Forbidden` if `CLOUDFLARE_API_TOKEN` lacks R2 write permission or points at the wrong account context.
+- In this project, the S3-compatible R2 path with `R2_ACCESS_KEY_ID` and `R2_SECRET_ACCESS_KEY` is the reliable upload method.
 
 Secret handling:
 

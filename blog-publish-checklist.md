@@ -67,13 +67,45 @@ Only do this for newly generated images.
 
 - Upload final generated files from `images/generated/`
 - Preserve keys like `images/generated/example-image.jpg`
+- Use the S3-compatible R2 upload path by default:
+
+```bash
+for f in $(git show --name-only --format= HEAD -- images/generated | sort); do
+  case "$f" in
+    *.jpg) ct='image/jpeg' ;;
+    *.png) ct='image/png' ;;
+    *) ct='application/octet-stream' ;;
+  esac
+  code=$(/usr/bin/curl -sS -o /dev/null -w '%{http_code}' \
+    -X PUT \
+    --aws-sigv4 'aws:amz:auto:s3' \
+    --user "$R2_ACCESS_KEY_ID:$R2_SECRET_ACCESS_KEY" \
+    --upload-file "$f" \
+    -H "Content-Type: $ct" \
+    -H "Cache-Control: public, max-age=31536000, immutable" \
+    "https://8d3b88fb762aaac5e9feca0421310dfb.r2.cloudflarestorage.com/phukettravel101/$f")
+  printf '%s %s\n' "$code" "$f"
+done
+```
+
+- Upload result should be `200`
 - Verify public URL:
 
 ```bash
-curl -I https://pub-<bucket-id>.r2.dev/images/generated/example-image.jpg
+curl -I https://pub-d7a7c52607b0453182010699e6e55dc7.r2.dev/images/generated/example-image.jpg
 ```
 
-- Confirm `HTTP 200` before using the URL in HTML
+- For batch verification:
+
+```bash
+for f in $(git show --name-only --format= HEAD -- images/generated | sort); do
+  code=$(/usr/bin/curl -s -o /dev/null -w '%{http_code}' "https://pub-d7a7c52607b0453182010699e6e55dc7.r2.dev/$f")
+  printf '%s %s\n' "$code" "$f"
+done
+```
+
+- Confirm public `HTTP 200` before using the URL in HTML
+- Avoid `wrangler r2 object put` unless the Cloudflare API token has confirmed R2 write permission for the correct account
 
 ## 7. Update Site Discovery
 
