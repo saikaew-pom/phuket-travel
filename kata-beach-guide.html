@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
 <!-- Google tag (gtag.js) - delayed for performance -->
 <script>
@@ -23,16 +23,23 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kata Beach Guide: Phuket's Favorite Family Destination - PHUKET TRAVEL 101</title>
-    <meta name="description" content="Ultimate Kata Beach guide for 2026. Discover why it's Phuket's top family destination, best surf spots, where to eat, and the top luxury resorts in Kata Yai.">
+    <title>Kata Beach Complete Guide: Why It's the King of Family Holidays - PHUKET TRAVEL 101</title>
+    <meta name="description" content="A practical 2026 guide to Kata Beach for families, covering swimming seasons, surf, kid-friendly activities, where to stay, where to eat, and why Kata works so well for first-time Phuket trips.">
     <link rel="canonical" href="https://phukettravel101.com/kata-beach-guide.html">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://phukettravel101.com/kata-beach-guide.html">
-    <meta property="og:title" content="Kata Beach Guide: Phuket's Favorite Family Destination">
-    <meta property="og:description" content="Everything you need to know about Kata Beach, from surfing to family-friendly activities.">
+    <meta property="og:title" content="Kata Beach Complete Guide: Why It's the King of Family Holidays">
+    <meta property="og:description" content="A practical 2026 guide to Kata Beach for families, covering swimming seasons, surf, kid-friendly activities, where to stay, where to eat, and why Kata works so well for first-time Phuket trips.">
     <meta property="og:image" content="https://phukettravel101.com/images/beach-kata-optimized.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://phukettravel101.com/kata-beach-guide.html">
+    <meta property="twitter:title" content="Kata Beach Complete Guide: Why It's the King of Family Holidays">
+    <meta property="twitter:description" content="A practical 2026 guide to Kata Beach for families, covering swimming seasons, surf, kid-friendly activities, where to stay, where to eat, and why Kata works so well for first-time Phuket trips.">
+    <meta property="twitter:image" content="https://phukettravel101.com/images/beach-kata-optimized.jpg">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,11 +77,11 @@
         },
         {
             "@type": "Article",
-            "headline": "Kata Beach Guide: Phuket's Favorite Family Destination - PHUKET TRAVEL 101",
-            "description": "Ultimate Kata Beach guide for 2026. Discover why it's Phuket's top family destination, best surf spots, where to eat, and the top luxury resorts in Kata Yai.",
+            "headline": "Kata Beach Complete Guide: Why It's the King of Family Holidays",
+            "description": "A practical 2026 guide to Kata Beach for families, covering swimming seasons, surf, kid-friendly activities, where to stay, where to eat, and why Kata works so well for first-time Phuket trips.",
             "image": "https://phukettravel101.com/images/beach-kata-optimized.jpg",
             "datePublished": "2026-05-01",
-            "dateModified": "2026-05-07",
+            "dateModified": "2026-05-09",
             "author": {
                 "@type": "Person",
                 "name": "Pom"
@@ -95,7 +102,7 @@
                 {
                     "@type": "ListItem",
                     "position": 2,
-                    "name": "Kata Beach Guide: Phuket's Favorite Family Destination",
+                    "name": "Kata Beach Complete Guide: Why It's the King of Family Holidays",
                     "item": "https://phukettravel101.com/kata-beach-guide.html"
                 }
             ]
@@ -103,8 +110,46 @@
     ]
 }
     </script>
+    <style>
+        .nav-item { position: relative; transition: all 0.5s ease; }
+        .nav-item.active { opacity: 1 !important; }
+        .nav-item.active .nav-dot { background-color: #3b82f6; color: white; transform: scale(1.1); box-shadow: 0 0 15px rgba(59, 130, 246, 0.3); border-color: #3b82f6; }
+        .nav-dot { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .article-kicker { color: #2563eb; background: #eff6ff; border: 1px solid #dbeafe; border-radius: 999px; display: inline-flex; align-items: center; gap: .45rem; padding: .45rem .75rem; font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+        .article-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; color: #6b7280; font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+        .article-meta span:not(:last-child)::after { content: ""; display: inline-block; width: .25rem; height: .25rem; margin-left: .75rem; border-radius: 999px; background: #d1d5db; vertical-align: middle; }
+        .insight-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; overflow: hidden; border: 1px solid #e5e7eb; border-radius: 1.5rem; background: #e5e7eb; }
+        .insight-card { background: #fff; padding: 1.25rem; }
+        .insight-label { display: block; margin-bottom: .35rem; color: #6b7280; font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+        .insight-value { color: #111827; font-size: .98rem; font-weight: 800; line-height: 1.35; }
+        .day-overview { display: grid; gap: .75rem; margin: 2rem 0 3rem; }
+        .day-overview a { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1rem; padding: 1rem; border: 1px solid #e5e7eb; border-radius: 1rem; background: #fff; text-decoration: none; transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease; }
+        .day-overview a:hover { border-color: #93c5fd; box-shadow: 0 12px 28px #0f172a12; transform: translateY(-1px); }
+        .day-num { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: 999px; background: #111827; color: #fff; font-weight: 900; flex: 0 0 auto; }
+        .day-overview-title { display: block; color: #111827; font-size: .95rem; font-weight: 900; line-height: 1.25; }
+        .day-overview-route { display: block; margin-top: .2rem; color: #6b7280; font-size: .8rem; font-weight: 700; }
+        .day-section { margin: 4rem 0; padding: 2rem 0 0; border-top: 1px solid #e5e7eb; scroll-margin-top: 7rem; }
+        .day-heading { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.75rem; }
+        .day-heading h2 { margin: 0; color: #111827; font-size: clamp(1.7rem, 4vw, 2.35rem); line-height: 1.05; letter-spacing: 0; text-transform: none; }
+        .day-heading p { margin: .4rem 0 0; color: #6b7280; font-size: .82rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+        .reader-note { border: 1px solid #bfdbfe; border-radius: 1.5rem; background: #eff6ff; padding: 1.35rem; color: #1e3a8a; }
+        .reader-note h4 { margin: 0 0 .35rem; color: #1e3a8a; font-size: .8rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+        .reader-note p { margin: 0; color: #1e40af; font-size: .94rem; line-height: 1.65; }
+        .planning-cta { display: grid; gap: 1rem; margin: 3rem 0; padding: 1.5rem; border: 1px solid #dbeafe; border-radius: 1.5rem; background: linear-gradient(135deg, #eff6ff, #fff); }
+        .planning-cta h3 { margin: 0; color: #111827; font-size: 1.2rem; line-height: 1.25; }
+        .planning-cta p { margin: 0; color: #4b5563; font-size: .95rem; line-height: 1.65; }
+        .planning-cta a { display: inline-flex; width: fit-content; align-items: center; gap: .5rem; padding: .85rem 1rem; border-radius: 999px; background: #111827; color: #fff; font-size: .78rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
+        .sidebar-card { border-radius: 1.75rem; border: 1px solid #e5e7eb; background: #fff; box-shadow: 0 18px 45px #0f172a14; padding: 1.5rem; overflow: hidden; }
+        @media (max-width: 768px) {
+            .insight-grid { grid-template-columns: 1fr; }
+            .article-meta { gap: .45rem; }
+            .article-meta span:not(:last-child)::after { margin-left: .45rem; }
+            .day-overview a { grid-template-columns: auto 1fr; }
+            .day-overview a span:last-child { display: none; }
+        }
+    </style>
 </head>
-<body class="bg-white text-gray-900 selection:bg-black selection:text-white">
+<body class="bg-white text-gray-900 selection:bg-black selection:text-white font-sans">
     <a class="skip-link" href="#main-content">Skip to content</a>
     <!-- Navigation -->
     <nav aria-label="Main navigation" class="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-4">
@@ -143,70 +188,130 @@
         </div>
     </nav>
 
+    <div class="lg:hidden fixed top-0 left-0 w-full h-1 z-[60] bg-slate-100">
+        <div id="mobile-progress" class="h-full bg-blue-600 transition-all duration-300" style="width: 0%"></div>
+    </div>
+
     <main id="main-content" class="max-w-7xl mx-auto px-4 md:px-6 pt-24 md:pt-32 pb-20">
-        <article class="max-w-4xl mx-auto">
-            <img src="https://phukettravel101.com/images/beach-kata-optimized.jpg" alt="Panoramic view of Kata Beach in Phuket with turquoise water and golden sand" class="w-full aspect-video md:h-[450px] object-cover rounded-4xl shadow-2xl mb-12">
-            
-            <header class="mb-12">
-                <h1 class="text-3xl md:text-5xl font-black tracking-tight mb-4">Kata Beach Guide: Phuket's Favorite Family Destination</h1>
-                <div class="flex items-center text-gray-500 space-x-4">
-                    <span>2026-05-01</span>
-                    <span>•</span>
-                    <span>By Pom</span>
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-12">
+            <article class="max-w-4xl mx-auto">
+                <div class="relative mb-12 group">
+                    <img src="https://phukettravel101.com/images/beach-kata-optimized.jpg" alt="Kata Beach in Phuket with broad sand, calm blue water, and a family-friendly shoreline" fetchpriority="high" class="w-full aspect-video md:h-[500px] object-cover rounded-4xl shadow-2xl transition-transform duration-700 group-hover:scale-[1.01]" width="1200" height="675">
+                    <div class="absolute inset-0 rounded-4xl ring-1 ring-inset ring-black/10"></div>
                 </div>
-            </header>
 
-            <div class="prose prose-sm md:prose-lg max-w-none prose-img:rounded-3xl prose-headings:font-black prose-a:text-blue-600">
-                <h2 id="thecompleteguidetokatabeachphuketsallrounderparadise">The Complete Guide to Kata Beach: Phuket's All-Rounder Paradise</h2>
-<p>Kata Beach is arguably the most well-rounded beach on Phuket. It manages to capture a specific type of magic that appeals to almost everyone: families love the gentle slope of the sand, surfers flock to its waves during the monsoon, and couples enjoy the upscale dining and stunning sunsets. Located just south of Karon Beach, Kata is divided into two main areas: Kata Yai (the main beach) and Kata Noi (the smaller, more exclusive bay to the south).</p>
-<p>In this guide, we’ll dive deep into Kata Yai, providing you with everything you need to plan the perfect stay in this vibrant seaside town.</p>
+                <header class="mb-10">
+                    <span class="article-kicker">Beach Guide</span>
+                    <h1 class="text-3xl md:text-6xl font-black tracking-tight mb-8 leading-tight">Kata Beach Complete Guide: Why It's the King of Family Holidays</h1>
+                    <p class="text-xl text-gray-500 mb-8 leading-relaxed font-medium">If one Phuket beach keeps getting recommended to first-time families, there is a reason. Kata makes beach days easy. The sand is broad, the town is walkable, dinner is simple, and the whole area balances convenience with enough charm that the holiday still feels special.</p>
+                    <div class="article-meta">
+                        <span>May 9, 2026</span>
+                        <span>14 Min Read</span>
+                        <span>By Pom, Local Host</span>
+                    </div>
+                </header>
 
-<p>Once you've cleared customs, you'll need to choose an <a href='airport-transfer-guide.html' class='font-bold text-blue-600 hover:underline'>airport transfer</a> to reach your hotel.</p><hr />
-<h2 id="1understandingthezonesofkata">1. Understanding the Zones of Kata</h2>
-<p>Kata Beach is a 1.5-kilometer crescent of golden sand. While it’s easy to walk from one end to the other, the atmosphere changes significantly as you move along the shore.</p>
-<h3 id="thenorthendquietandnatural">The North End: Quiet and Natural</h3>
-<p>The northern end of Kata is the quietest. It’s bordered by a rocky headland that separates it from Karon Beach. This area is ideal for those who want to escape the main crowds. Just offshore, you’ll see <strong>Koh Pu (Crab Island)</strong>, a small, uninhabited island that adds a beautiful focal point to the horizon. The water here is calm, making it a safe spot for young children to splash around.</p>
-<h3 id="thecentralsectiontheheartofkata">The Central Section: The Heart of Kata</h3>
-<p>The center of the beach is where most of the action happens. This area is dominated by the sprawling <strong>Club Med</strong> resort, which occupies a significant portion of the land behind the beach road. Because of this, the beach road itself is relatively quiet as there are fewer shops directly facing the sand. Most of the commercial activity (shops, convenience stores, and tour desks) is concentrated one block back on the main road.</p>
-<h3 id="thesouthendsurfandchill">The South End: Surf and Chill</h3>
-<p>The southern end is where Kata’s "cool" factor resides. This is the base for Phuket’s surf community. You’ll find several beach clubs, surf schools, and the legendary <strong>Ska Bar</strong>, which is built into the rocks at the very edge of the bay. This end of the beach has a more Bohemian, laid-back vibe compared to the central section.</p>
-<hr />
-<h2 id="2thingstodoinkata">2. Things to Do in Kata</h2>
-<h3 id="surfingtheandaman">Surfing the Andaman</h3>
-<p>Kata is the surfing capital of Phuket. From <strong>May to October</strong> (the monsoon season), the waves here are the most consistent on the island. While they aren't world-class "pipeline" waves, they are perfect for beginners and intermediate surfers. Numerous shops along the beach offer board rentals and lessons.</p>
-<h3 id="snorkelinganddiving">Snorkeling and Diving</h3>
-<p>During the high season (November to April), the water is crystal clear. The best snorkeling is at the northern end near the rocks and around the small island of Koh Pu. If you’re a diver, many shops in Kata offer day trips to nearby sites like Racha Island or the Similans.</p>
-<h3 id="familyactivities">Family Activities</h3>
-<ul>
-<li><strong>Dino Park Mini Golf:</strong> Located near the Karon border, this prehistoric-themed mini-golf course is a hit with kids and adults alike. It features life-sized dinosaurs, a volcano that "erupts" every 30 minutes, and a fun jungle atmosphere.</li>
-<li><strong>Surf House Phuket:</strong> If the ocean waves are too flat, you can head to Surf House near the south end. It’s a flow-rider park where you can practice surfing on a controlled, artificial wave while listening to great music and enjoying a drink.</li>
-</ul>
-<hr />
-<h2 id="3wheretoeatfromstreetfoodtofinedining">3. Where to Eat: From <a href="old-town-cafes.html" class="font-bold text-blue-600 hover:underline">Street Food</a> to Fine Dining</h2>
-<h3 id="theiconicchoicetheboathouse">The Iconic Choice: The Boathouse</h3>
-<p><strong>The Boathouse</strong> is a Kata institution. Located right on the beach, it’s famous for its award-winning wine cellar and high-end Thai and Western cuisine. It’s the perfect spot for a romantic sunset dinner.</p>
-<h3 id="localflavorskatanightmarket">Local Flavors: Kata Night Market</h3>
-<p>For those on a <a href="phuket-cost-guide-2026.html" class="font-bold text-blue-600 hover:underline">budget</a> or looking for an authentic experience, the <strong>Kata Night Market</strong> (located in Kata Center) is a must. You can find everything from grilled seafood and spicy papaya salad to mango sticky rice and coconut ice cream. It’s affordable, vibrant, and a great way to sample many different dishes in one evening.</p>
-<h3 id="luxurydiningkatarocks">Luxury Dining: Kata Rocks</h3>
-<p>If you want to splurge, <strong>Kata Rocks</strong> offers a "superyacht" lifestyle experience. Their restaurant overlooks the ocean and is famous for its Mediterranean-inspired menu and stunning infinity pool views.</p>
-<hr />
-<h2 id="4wheretostay">4. Where to Stay</h2>
-<ul>
-<li><strong>Luxury:</strong> <em>Kata Rocks</em> (for private pool villas) and <em>The Shore at Katathani</em> (located at the far south in Kata Noi).</li>
-<li><strong>Family-Friendly:</strong> <em>Club Med Phuket</em> and <em>Beyond Resort Kata</em> (which is one of the few hotels with direct beach access).</li>
-<li><strong>Boutique:</strong> <em>The Boathouse Phuket</em> offers a more intimate, stylish stay right on the water.</li>
-</ul>
-<hr />
-<h2 id="5practicaltipsforyourvisit">5. Practical Tips for Your Visit</h2>
-<ul>
-<li><strong>Getting Around:</strong> Kata is very walkable, but if you want to explore further, you can find plenty of tuk-tuks. The <strong>Phuket Smart Bus</strong> also stops in Kata, connecting it to the airport and other west coast beaches for a very low flat fee.</li>
-<li><strong>Beach Facilities:</strong> There are public toilets and showers at both ends of the beach. Sunbeds are available for rent in designated zones for about 100-200 baht per day.</li>
-<li><strong>Safety:</strong> Always pay attention to the flags on the beach. A <strong>Red Flag</strong> means the water is dangerous and you should not swim due to strong rip currents.</li>
-</ul>
-<h2 id="conclusion">Conclusion</h2>
-<p>Kata Beach strikes the perfect balance. It’s developed enough to provide every comfort you could need, but it hasn't lost its natural charm or its soul. Whether you’re here to catch your first wave or simply to relax under a parasol with a cold coconut, Kata rarely disappoints.</p>
-<p><em>Information inspired by the extensive guides at Phuket 101.</em></p>
-            </div>
+                <section class="insight-grid mb-10" aria-label="Kata Beach guide at a glance">
+                    <div class="insight-card">
+                        <span class="insight-label">Best For</span>
+                        <p class="insight-value">Families, first-time Phuket visitors, and travelers who want an easy beach base without Patong-style intensity.</p>
+                    </div>
+                    <div class="insight-card">
+                        <span class="insight-label">Beach Feel</span>
+                        <p class="insight-value">Walkable, balanced, scenic, and lively enough in the evening without becoming overwhelming.</p>
+                    </div>
+                    <div class="insight-card">
+                        <span class="insight-label">What Kids Get</span>
+                        <p class="insight-value">Soft sand, manageable swimming zones in season, casual food, mini golf, and simple beach-to-dinner logistics.</p>
+                    </div>
+                    <div class="insight-card">
+                        <span class="insight-label">Tradeoff</span>
+                        <p class="insight-value">In monsoon months the surf energy rises, which is fun for some travelers but changes the family-swim equation.</p>
+                    </div>
+                </section>
+
+                <nav class="day-overview" aria-label="Kata Beach guide overview">
+                    <a href="#day-1"><span class="day-num">1</span><span><strong class="day-overview-title">Why Kata Wins Families Over</strong><span class="day-overview-route">What feels easier here than on many other Phuket beaches</span></span><span aria-hidden="true">↓</span></a>
+                    <a href="#day-2"><span class="day-num">2</span><span><strong class="day-overview-title">Understand the Beach Layout</strong><span class="day-overview-route">North, centre, south, and the Kata Noi connection</span></span><span aria-hidden="true">↓</span></a>
+                    <a href="#day-3"><span class="day-num">3</span><span><strong class="day-overview-title">Know the Water Rhythm</strong><span class="day-overview-route">Swimming months, surf season, and when caution matters</span></span><span aria-hidden="true">↓</span></a>
+                    <a href="#day-4"><span class="day-num">4</span><span><strong class="day-overview-title">Plan the Family Day</strong><span class="day-overview-route">Beach hours, mini golf, markets, and easy evening plans</span></span><span aria-hidden="true">↓</span></a>
+                    <a href="#day-5"><span class="day-num">5</span><span><strong class="day-overview-title">Pick Where to Stay and Eat</strong><span class="day-overview-route">Family hotels, budget food, and one or two nicer splurges</span></span><span aria-hidden="true">↓</span></a>
+                    <a href="#day-6"><span class="day-num">6</span><span><strong class="day-overview-title">Compare Kata With Other Bases</strong><span class="day-overview-route">When Kata is perfect and when another beach may fit better</span></span><span aria-hidden="true">↓</span></a>
+                </nav>
+
+                <div class="prose prose-sm md:prose-lg max-w-none prose-img:rounded-3xl prose-headings:font-black prose-a:text-blue-600">
+                    <h2 id="intro">Why Kata So Often Becomes the Right Answer</h2>
+                    <p>Kata is not the quietest beach in Phuket and it is not the most luxurious. What it does better than almost anywhere else is combine enough of everything into one easy base. Families can reach the beach without long transfers, find food without drama, and keep evenings relaxed without feeling stranded inside a resort.</p>
+                    <p>If you are trying to choose the best Phuket base for children, this page works well alongside our <a href="phuket-family-beaches.html" class="font-bold text-blue-600 hover:underline">family beaches guide</a>, our <a href="best-beaches-in-phuket.html" class="font-bold text-blue-600 hover:underline">best beaches in Phuket roundup</a>, and our <a href="phuket-7-day-itinerary.html" class="font-bold text-blue-600 hover:underline">7-day Phuket itinerary</a>.</p>
+
+                    <div class="reader-note">
+                        <h4>Quick Reality Check</h4>
+                        <p>Kata is brilliant for family holidays in the calmer season. During the monsoon, it becomes more of a surf-and-watch-the-sea beach, which can still be enjoyable but changes how freely children can swim.</p>
+                    </div>
+
+                    <hr class="my-16 border-slate-100">
+
+                    <section id="day-1" class="timeline-item day-section">
+                        <div class="day-heading"><span class="day-num">1</span><div><h2>Why Kata Wins Families Over</h2><p>What feels easier here than on many other Phuket beaches</p></div></div>
+                        <p>The main magic of Kata is not one dramatic landmark. It is the ease of the whole day. The beach is attractive without being hard work. The town behind it is active enough to be useful, but not so loud that parents feel like they booked the wrong neighborhood. You can do beach, shower, dinner, and an evening walk without turning the day into a transport operation.</p>
+                        <p>That balance matters a lot on family holidays. Kids are happier when the next thing is close. Parents are happier when they do not need to negotiate a taxi every time someone gets hungry or tired.</p>
+                    </section>
+
+                    <section id="day-2" class="timeline-item day-section">
+                        <div class="day-heading"><span class="day-num">2</span><div><h2>Understand the Beach Layout</h2><p>North, centre, south, and the Kata Noi connection</p></div></div>
+                        <p>Kata Beach itself is easy to walk, but it helps to understand that the area has a few different moods. The north end feels calmer and softer, with a more open view and easier family pacing. The middle stays practical and central. The south end has more energy and becomes the focal point for surf culture and sunset hangouts.</p>
+                        <p>Then there is <strong>Kata Noi</strong>, just over the hill. It is not the same experience as Kata Yai. Kata Noi feels more secluded and upscale, which is lovely, but it is not as convenient for the everyday family rhythm of snacks, shops, casual dinners, and easy walks.</p>
+                    </section>
+
+                    <section id="day-3" class="timeline-item day-section">
+                        <div class="day-heading"><span class="day-num">3</span><div><h2>Know the Water Rhythm</h2><p>Swimming months, surf season, and when caution matters</p></div></div>
+                        <p>In the calmer season, Kata is one of the easiest Phuket beaches for classic family swim days. The sand is gentle, the bay shape is friendly, and the water often looks exactly the way people imagine a Phuket holiday should look. That is why Kata appears so often in family planning conversations.</p>
+                        <h3>When Surf Becomes the Story</h3>
+                        <p>From roughly May to October, Kata becomes much more interesting to surfers and much less predictable for casual family swimming. This is not automatically a reason to avoid the area, but it does mean parents should watch beach flags seriously and treat sea conditions as the main decision-maker for the day.</p>
+                        <p>If you are traveling in shoulder or rainy-season months, pair this page with our <a href="monsoon-season-guide.html" class="font-bold text-blue-600 hover:underline">Phuket monsoon guide</a> before assuming every beach day will be a swim day.</p>
+                    </section>
+
+                    <section id="day-4" class="timeline-item day-section">
+                        <div class="day-heading"><span class="day-num">4</span><div><h2>Plan the Family Day</h2><p>Beach hours, mini golf, markets, and easy evening plans</p></div></div>
+                        <p>Kata works so well because the family day naturally has shape. Mornings are for sand and swimming when conditions are right. Afternoons can become shade time, naps, or an easy break back at the hotel. Evenings are where Kata really helps: there is enough to do without forcing a big outing.</p>
+                        <ul>
+                            <li><strong>Dino Park Mini Golf:</strong> still one of the easiest family wins in the area after dinner.</li>
+                            <li><strong>Kata Night Market:</strong> a practical answer for mixed appetites and lighter budgets.</li>
+                            <li><strong>Surf House:</strong> fun if your family likes activity and the ocean is too flat or too rough.</li>
+                        </ul>
+                        <p>For travelers trying to keep costs sensible, Kata also pairs well with our <a href="phuket-cost-guide-2026.html" class="font-bold text-blue-600 hover:underline">Phuket cost guide</a>, because this is one of the places where you can comfortably mix simple meals and one nicer dinner without the trip feeling cheap.</p>
+                    </section>
+
+                    <div class="planning-cta">
+                        <div>
+                            <h3>Trying to decide between Kata, Bang Tao, and Nai Harn?</h3>
+                            <p>Tell me your kids' ages, your hotel budget, and whether you care more about calm water, walkability, or resort comfort, and I can narrow the best Phuket base for your trip.</p>
+                        </div>
+                        <a href="https://wa.me/66869643159?text=Hi%20Pom%2C%20can%20you%20help%20me%20decide%20if%20Kata%20Beach%20is%20right%20for%20my%20family%20holiday%3F" target="_blank" rel="noopener">Ask a Local Expert</a>
+                    </div>
+
+                    <section id="day-5" class="timeline-item day-section">
+                        <div class="day-heading"><span class="day-num">5</span><div><h2>Pick Where to Stay and Eat</h2><p>Family hotels, budget food, and one or two nicer splurges</p></div></div>
+                        <p>Kata gives you a wider range than people expect. Families who want straightforward convenience often do best near the main beach zone, where the walk back from the sand stays easy. Travelers who want a little more polish can lean toward beachfront or hillside properties, knowing they may trade some convenience for views or atmosphere.</p>
+                        <ul>
+                            <li><strong>Family-friendly stays:</strong> look for beach access, pool shade, and easy walkability before chasing tiny differences in room style.</li>
+                            <li><strong>Casual food:</strong> Kata Night Market and the main dining roads keep dinner easy.</li>
+                            <li><strong>Nicer meals:</strong> places like The Boathouse or a sunset splurge above Kata Noi work well when you want one polished evening.</li>
+                        </ul>
+                        <p>If food is part of how your family enjoys a destination, you can also build in one town day using our <a href="old-town-cafes.html" class="font-bold text-blue-600 hover:underline">Old Town cafes guide</a> as a softer non-beach outing.</p>
+                    </section>
+
+                    <section id="day-6" class="timeline-item day-section">
+                        <div class="day-heading"><span class="day-num">6</span><div><h2>Compare Kata With Other Bases</h2><p>When Kata is perfect and when another beach may fit better</p></div></div>
+                        <p>Kata is usually the best answer when you want a classic family holiday with easy beach access and a simple town rhythm. It is less likely to be the best answer if you want a resort-heavy luxury stay, a very quiet escape, or nightlife close at hand.</p>
+                        <ul>
+                            <li><strong>Choose Kata over Patong:</strong> if you want calmer evenings and a more family-first feel.</li>
+                            <li><strong>Choose Kata over Bang Tao:</strong> if walkability matters more than resort polish.</li>
+                            <li><strong>Choose Bang Tao or Mai Khao instead:</strong> if you want more space or a stronger resort bubble.</li>
+                            <li><strong>Choose Nai Harn instead:</strong> if you prefer a more scenic, local-favorite atmosphere and do not mind a slightly less plug-and-play setup.</li>
+                        </ul>
+                        <p>For many first-time visitors, Kata is not the most dramatic answer. It is the smartest one.</p>
+                    </section>                </div>
             <!-- Social Sharing -->
             <div class="mt-16 pt-8 border-t border-gray-100">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
@@ -233,31 +338,64 @@
                 <h2 class="text-2xl font-black tracking-tight mb-8">Related Guides</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                    <a href="bang-tao-beach-guide.html" class="group">
+                    <a href="phuket-family-beaches.html" class="group">
                         <div class="relative overflow-hidden rounded-2xl mb-4">
-                            <img src="https://phukettravel101.com/images/beach-bang-tao.png" alt="Bang Tao Beach Guide: Luxury & Serenity" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="https://pub-d7a7c52607b0453182010699e6e55dc7.r2.dev/images/generated/family-beaches-hero-1600.jpg" alt="Phuket family beaches guide" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
                         <span class="text-[10px] font-bold uppercase tracking-widest text-blue-600 mb-2 block">Beach Guide</span>
-                        <h3 class="font-bold leading-tight group-hover:text-blue-600 transition-colors">Bang Tao Beach Guide: Luxury & Serenity</h3>
+                        <h3 class="font-bold leading-tight group-hover:text-blue-600 transition-colors">Phuket Family Beaches: Where the Water Is Calmest</h3>
                     </a>
-                    <a href="elephant-sanctuaries.html" class="group">
+                    <a href="best-beaches-in-phuket.html" class="group">
                         <div class="relative overflow-hidden rounded-2xl mb-4">
-                            <img src="https://phukettravel101.com/images/guide-elephants.png" alt="Ethical Guide to Elephant Sanctuaries" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
-                        </div>
-                        <span class="text-[10px] font-bold uppercase tracking-widest text-blue-600 mb-2 block">Local Culture</span>
-                        <h3 class="font-bold leading-tight group-hover:text-blue-600 transition-colors">Ethical Guide to Elephant Sanctuaries</h3>
-                    </a>
-                    <a href="hidden-coves.html" class="group">
-                        <div class="relative overflow-hidden rounded-2xl mb-4">
-                            <img src="https://phukettravel101.com/images/hidden-cove.png" alt="5 Hidden Coves in Phuket" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="https://pub-d7a7c52607b0453182010699e6e55dc7.r2.dev/images/generated/best-beaches-feature-1600.jpg" alt="Best beaches in Phuket guide" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
                         <span class="text-[10px] font-bold uppercase tracking-widest text-blue-600 mb-2 block">Beach Guide</span>
-                        <h3 class="font-bold leading-tight group-hover:text-blue-600 transition-colors">5 Hidden Coves in Phuket</h3>
+                        <h3 class="font-bold leading-tight group-hover:text-blue-600 transition-colors">The 21 Best Beaches in Phuket</h3>
+                    </a>
+                    <a href="phuket-7-day-itinerary.html" class="group">
+                        <div class="relative overflow-hidden rounded-2xl mb-4">
+                            <img src="https://phukettravel101.com/images/phuket-7-day-itinerary.png" alt="Phuket 7 day itinerary" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-blue-600 mb-2 block">Itinerary</span>
+                        <h3 class="font-bold leading-tight group-hover:text-blue-600 transition-colors">7 Days in Phuket: The Ultimate First-Timer's Itinerary</h3>
                     </a>
                 </div>
             </div>
 
-        </article>
+            </article>
+
+            <aside class="hidden lg:block">
+                <div class="sticky top-32">
+                    <div class="sidebar-card">
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6 flex items-center gap-2">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
+                            Kata Family Map
+                        </h4>
+
+                        <div class="rounded-2xl bg-slate-50 border border-slate-100 p-5 mb-8">
+                            <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Fast Take</p>
+                            <div class="grid gap-2 text-xs font-black text-gray-900">
+                                <span>Walkable beach base</span>
+                                <span>Strong family rhythm</span>
+                                <span>Best in calmer season</span>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="absolute left-4 top-4 bottom-4 w-0.5 bg-slate-100 -translate-x-1/2"></div>
+                            <div class="space-y-5 relative">
+                                <div id="nav-day-1" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500"><span class="nav-dot relative z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold border-4 border-white">1</span><span class="text-[10px] font-bold uppercase tracking-widest">Why It Works</span></div>
+                                <div id="nav-day-2" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500"><span class="nav-dot relative z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold border-4 border-white">2</span><span class="text-[10px] font-bold uppercase tracking-widest">Layout</span></div>
+                                <div id="nav-day-3" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500"><span class="nav-dot relative z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold border-4 border-white">3</span><span class="text-[10px] font-bold uppercase tracking-widest">Water Rhythm</span></div>
+                                <div id="nav-day-4" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500"><span class="nav-dot relative z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold border-4 border-white">4</span><span class="text-[10px] font-bold uppercase tracking-widest">Family Day</span></div>
+                                <div id="nav-day-5" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500"><span class="nav-dot relative z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold border-4 border-white">5</span><span class="text-[10px] font-bold uppercase tracking-widest">Stay & Eat</span></div>
+                                <div id="nav-day-6" class="nav-item flex items-center gap-4 opacity-30 transition-all duration-500"><span class="nav-dot relative z-10 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold border-4 border-white">6</span><span class="text-[10px] font-bold uppercase tracking-widest">Compare Bases</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -298,6 +436,44 @@
     </footer>
 
     <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    const dayNum = id.split('-')[1];
+                    document.querySelectorAll('.nav-item').forEach(el => {
+                        el.classList.remove('active');
+                        el.classList.add('opacity-30');
+                    });
+                    const nav = document.getElementById(`nav-day-${dayNum}`);
+                    if (nav) {
+                        nav.classList.add('active');
+                        nav.classList.remove('opacity-30');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section[id^="day-"]').forEach(section => {
+            observer.observe(section);
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth < 1024) {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                const progressBar = document.getElementById('mobile-progress');
+                if (progressBar) progressBar.style.width = scrolled + "%";
+            }
+        });
+
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
@@ -313,9 +489,8 @@
             }
         });
 
-        // Close menu on click outside
         document.addEventListener('click', (e) => {
-            if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+            if (menuBtn && !menuBtn.contains(e.target) && mobileMenu && !mobileMenu.contains(e.target)) {
                 mobileMenu.classList.add('hidden');
                 menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
             }

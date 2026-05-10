@@ -1,140 +1,310 @@
 # Blog Create/Edit Workflow
 
-Use this project workflow when creating or editing a Phuket Travel 101 blog article.
+Use this workflow when creating or updating a Phuket Travel 101 blog article.
 
-## Startup Checklist
+The goal is simple:
 
-Before starting a new blog task:
+- produce strong original content
+- keep the technical SEO clean
+- avoid duplicate work
+- finish with one reliable verification pass
 
-1. Confirm the local repo is on the correct branch with `git status -sb`.
-2. Confirm `origin` still points to the Phuket Travel 101 GitHub repo.
-3. Check the closest existing article patterns before writing new HTML.
-4. Decide whether the article needs fresh generated images.
-5. If images are needed, generate them into `images/generated/` first.
-6. Upload new images to Cloudflare R2 and verify the public R2 URL returns `200`.
-7. Only then point the article HTML and blog card image fields at the live R2 URLs.
+## Core Principles
 
-## 1. Inspect Existing Patterns
+- Match the current site pattern before inventing anything new.
+- Prefer one clean workflow over multiple optional branches.
+- Use internal links and related guides to turn each article into a bridge to other useful pages.
+- Keep visuals intentional. Generate new images only when they materially improve the article.
+- Verify changing facts before publishing. Topics like visas, regulations, prices, and tools can age quickly.
 
-- Read the closest existing blog article HTML before editing.
-- Match the current layout, typography, navigation, footer, related guides, schema, canonical URL, and WhatsApp CTA pattern.
-- Check `blog.html`, `index.html`, and `sitemap.xml` for how articles are listed.
+## 1. Start With Repo Context
 
-## 2. Create or Edit the Blog Page
+Before editing:
 
-- For new long-form articles, copy `master-blog-template.html` to the final article slug first.
-- Replace every `TEMPLATE_*` token before publishing.
-- Use a clear SEO title, meta description, canonical URL, Open Graph image, and article JSON-LD.
-- Keep article structure scannable with useful headings.
-- Build internal links naturally into the body content so each article acts as a bridge to other relevant Phuket Travel 101 guides.
-- Add related guide cards that match the site style.
-- Prefer existing CSS/classes and local patterns over new styling.
+1. Check repo state with `git status -sb`.
+2. Confirm `origin` still points to the Phuket Travel 101 repo.
+3. Read the closest matching live article and `master-blog-template.html`.
+4. Check `blog.html`, `index.html`, and `sitemap.xml` so you know how the article should be surfaced.
 
-## 2A. Internal Linking Requirements
+Use `master-blog-template.html` by default for a new long-form article.
 
-- Before writing or editing the article, scan `blog.html`, `sitemap.xml`, and relevant existing blog files to identify related articles.
-- Add contextual internal links inside paragraphs where they genuinely help the reader continue planning.
-- Use descriptive anchor text, not generic text such as "click here" or "read more".
-- Prioritize links to high-intent related guides, such as transport, beaches, weather, budget, itinerary, visa, money exchange, packing, and local etiquette pages.
-- Include at least 3-5 contextual internal links in a long-form article when relevant.
-- Also update the "Related Guides" cards with 3 strong internal destinations.
-- Do not force links into unrelated sections. Relevance matters more than count.
-- When editing an existing blog, look for missed bridge opportunities to newer articles and add them where natural.
+If a newer live article is a better structural match than the master template, copy that article instead and adapt it carefully.
 
-Good examples:
+## 2. Decide The Article Scope Before Writing
+
+Before touching HTML, decide:
+
+- the target search intent
+- the reader type
+- whether the topic depends on changing facts
+- whether the article really needs new images
+- which 3-5 internal links will naturally help the reader next
+
+Every article should answer one main decision clearly. Do not overload one article with multiple unrelated goals.
+
+## 3. Build The Page
+
+For new articles:
+
+1. Copy `master-blog-template.html` to the final slug.
+2. Replace every `TEMPLATE_*` token.
+3. Keep the current site layout, navigation, footer, WhatsApp CTA, schema pattern, and related guides style.
+
+For edited articles:
+
+1. Preserve the existing working layout unless the redesign is intentional.
+2. Look for outdated metadata, weak internal links, broken image paths, and stale factual claims.
+
+Required technical fields:
+
+- unique `<title>`
+- unique meta description
+- canonical URL matching the final filename
+- Open Graph title, description, and image
+- Twitter image metadata
+- valid JSON-LD
+- one clear `h1`
+
+Required content quality:
+
+- strong opening that explains who the article is for
+- scannable sections with useful subheads
+- practical local context, not generic travel filler
+- natural internal links inside the body
+- 3 related guide cards that actually fit the topic
+- article-specific WhatsApp CTA copy when appropriate
+
+## 4. Internal Linking Rules
+
+Each article should help the reader take the next useful step.
+
+Do this:
+
+- scan `blog.html`, `sitemap.xml`, and relevant live guides before writing
+- add 3-5 contextual internal links in long-form articles when relevant
+- use descriptive anchor text
+- update related guide cards with 3 strong destinations
+- when editing older posts, add links to newer relevant articles where natural
+
+Prioritize high-intent links such as:
+
+- transport
+- beaches
+- weather
+- budget
+- itinerary
+- entry or visa guides
+- money exchange
+- packing
+- local etiquette
+
+Good example:
 
 ```html
 If you plan to move around the island without a scooter, read our <a href="grab-vs-bolt-indrive-guide.html">Phuket ride-hailing guide</a> before booking a remote hotel.
 ```
 
-```html
-For a full week plan that balances culture, beaches, and islands, use our <a href="phuket-7-day-itinerary.html">7-day Phuket itinerary</a> as your starting point.
-```
-
-Avoid:
+Avoid generic anchors:
 
 ```html
 For more information, <a href="blog.html">click here</a>.
 ```
 
-## 3. Generate Blog Images
+## 5. Image Strategy
 
-- Generate a feature image for the article.
-- Generate 3-4 body images when the article benefits from supporting visuals.
-- Save working image files into `images/generated/` with descriptive filenames.
-- Keep the article-specific image set fresh. Do not reuse older site images unless the user explicitly wants that.
-- Use absolute image URLs in HTML:
+Only create new images when they improve the page meaningfully.
 
-```html
-https://phukettravel101.com/images/example-image.png
+Typical use:
+
+- feature image for new flagship or pillar articles
+- 3-4 body images for long-form visual guides
+- no forced image generation for every article
+
+Save generated working files in:
+
+```text
+images/generated/
 ```
 
-Update all relevant locations:
+Use descriptive filenames such as:
+
+```text
+images/generated/kata-family-sunrise-1600.jpg
+```
+
+Image quality rules:
+
+- use natural alt text
+- include width and height
+- use `loading="lazy"` for body images
+- use `fetchpriority="high"` only for the main hero image
+
+## 6. Image URL Rules
+
+This repo currently uses two valid production image patterns:
+
+1. First-party site images:
+
+```text
+https://phukettravel101.com/images/example-image.jpg
+```
+
+2. Public Cloudflare R2 image URLs:
+
+```text
+https://pub-<bucket-id>.r2.dev/images/generated/example-image.jpg
+```
+
+Use one rule consistently inside a given article.
+
+Recommended default:
+
+- existing site asset already in `/images`: use `https://phukettravel101.com/images/...`
+- newly generated article images uploaded to R2: use the live R2 URL that returns `200`
+
+After choosing the final image URL, update all relevant locations:
 
 - `<img src="...">`
 - `og:image`
 - Twitter image metadata
 - JSON-LD `"image"`
-- Blog card image data
-- Related guide thumbnails, if changed
+- blog card image entry in `blog.html`
+- related guide thumbnails, if changed
 
-## 4. Upload Images to Cloudflare R2
+Do not leave local workspace paths in published HTML.
 
-- Upload the new image files from `images/generated/` to the `phukettravel101` R2 bucket.
-- Preserve object keys such as:
+## 7. Upload Images To Cloudflare R2
+
+Only do this when the article uses newly generated images.
+
+Workflow:
+
+1. Upload the final generated files from `images/generated/` to the `phukettravel101` R2 bucket.
+2. Preserve object keys such as:
 
 ```text
-images/generated/example-image.png
+images/generated/example-image.jpg
 ```
 
-- Do not paste long-lived secrets into chat. Prefer local environment variables, local config, or a freshly rotated temporary key.
-- After upload, test the live public R2 URL:
+3. Verify the public R2 URL:
 
 ```bash
-curl -I https://pub-<bucket-id>.r2.dev/images/generated/example-image.png
+curl -I https://pub-<bucket-id>.r2.dev/images/generated/example-image.jpg
 ```
 
 Expected result: `HTTP 200` with the correct image content type.
 
-- If the `phukettravel101.com/images/...` URL returns `404`, do not assume the file is missing from the repo. Check the live R2 URL first.
-- Only consider the image step complete once the public R2 URL returns `200`.
+4. Only then update the article to use the live URL.
 
-## 5. Update Site Discovery
+Secret handling:
 
-- Add or update the article entry in `blog.html`.
-- Add homepage placement in `index.html` only when appropriate.
-- Add or update the URL in `sitemap.xml`.
-- Confirm the canonical URL matches the final file name.
-- Point the article HTML and blog card image fields at the live R2 URL, not the local workspace path.
+- do not paste long-lived secrets into chat
+- prefer local environment variables, local config, or CLI login
 
-## 6. Verify Before Completion
+## 8. Update Site Discovery
 
-Run targeted checks:
+For every new article:
+
+1. Add the entry in `blog.html`.
+2. Add the URL to `sitemap.xml`.
+3. Add homepage placement in `index.html` only if the article deserves explicit homepage presence.
+4. Confirm the canonical URL matches the final slug exactly.
+
+For updated articles:
+
+- refresh `blog.html` card copy or image only if the article positioning changed
+- update `sitemap.xml` only if the URL changed or you intentionally maintain fresh `lastmod`
+
+## 9. Verification Gate
+
+Run this before calling the article complete.
+
+### Content and Template Checks
 
 ```bash
-rg --pcre2 -n "(?<!phukettravel101\\.com/)images/" --glob "*.html"
+rg -n 'TEMPLATE_' <article>.html
+rg -n '\*\*' <article>.html
+```
+
+Expected result:
+
+- no `TEMPLATE_` tokens left
+- no accidental markdown markers like `**`
+
+### Structure Checks
+
+```bash
+rg -o '<h1\\b' <article>.html | wc -l
+rg -n '<link rel="canonical"|og:image|application/ld\\+json' <article>.html
+```
+
+Expected result:
+
+- exactly 1 `h1`
+- canonical, OG image, and JSON-LD all present
+
+### Image Path Checks
+
+Use this to catch local relative image references that were left behind accidentally:
+
+```bash
+rg --pcre2 -n '(?<!https://phukettravel101\\.com/)(?<!https://pub-[^"]+\\.r2\\.dev/)images/' --glob '*.html'
+```
+
+Review the matches carefully.
+
+The goal is not "zero matches at any cost." The goal is to catch accidental unpublished paths.
+
+### Discovery Checks
+
+Confirm:
+
+- the article is linked from `blog.html`
+- `sitemap.xml` includes the article URL
+
+### Diff and Status Checks
+
+```bash
 git diff --stat
+git diff --check
 git status -sb
 ```
 
-For new article images, confirm:
+### Optional Factual Check
 
-- Local image files exist in `images/`.
-- Public image URLs return `HTTP 200`.
-- HTML references use the live R2 URL for the generated article images.
-- The article is linked from `blog.html`.
-- `sitemap.xml` includes the article URL.
+For topics with changing facts, confirm reliable sources again right before finalizing. Use that research to improve accuracy in the article body, metadata, and recommendations, but do not add a reader-facing "Research Notes," "Editorial Note," or source-log section to the published page.
 
-## 7. Commit and Push
+- visa or entry rules
+- legal or tax references
+- prices
+- transport providers
+- opening status
 
-- Stage only intended files.
-- Commit with a clear message, for example:
+## 10. Quality Bar Before Publish
+
+The article is ready only if all of these are true:
+
+- it answers the search intent clearly
+- the opening is useful within the first screenful
+- headings are scannable and not repetitive
+- internal links help the reader naturally
+- related guides are relevant
+- metadata is complete and specific
+- image URLs are final and working
+- structured data is valid
+- no placeholder or template tokens remain
+
+## 11. Commit and Push
+
+Stage only intended files.
+
+Example commit:
 
 ```bash
 git commit -m "Add Phuket [topic] guide"
 ```
 
-- Push to GitHub:
+Push:
 
 ```bash
 git push origin main
