@@ -1,5 +1,13 @@
 window.PHUKET_BLOGS = [
   {
+    "title": "White Water Rafting Near Phuket: Is It Worth the Trip?",
+    "description": "Plan a white water rafting day trip from Phuket to Phang Nga with local advice on routes, safety, timing, who should book, what to wear, and Phuket Rafting package options.",
+    "image": "https://phukettravel101.com/images/generated/phuket-white-water-rafting-hero.jpg",
+    "category": "Adventure Day Trip",
+    "url": "phuket-white-water-rafting-guide.html",
+    "date": "2026-05-10"
+  },
+  {
     "title": "10 Hidden and Secret Beaches in Phuket Still Quiet in 2026",
     "description": "Find Phuket's quieter beaches and secret coves that still feel peaceful in 2026, with practical local advice on access, timing, swimming safety, and who each beach suits.",
     "image": "https://phukettravel101.com/images/generated/hidden-secret-beaches-phuket-hero.jpg",
