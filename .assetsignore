@@ -13,5 +13,3 @@
 /wrangler.jsonc
 *.md
 /input.css
-/scripts
-/scripts/**
