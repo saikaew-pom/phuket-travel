@@ -251,7 +251,7 @@
 
         // Blog Logic
         const blogs = (window.PHUKET_BLOGS || []).slice().sort((a, b) => {
-            return (b.date || '').localeCompare(a.date || '') || a.title.localeCompare(b.title);
+            return (b.date || '').localeCompare(a.date || '');
         });
 
         let activeCategory = 'all';
