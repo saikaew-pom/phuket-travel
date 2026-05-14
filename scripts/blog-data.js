@@ -2,7 +2,7 @@ window.PHUKET_BLOGS = [
   {
     "title": "White Water Rafting Near Phuket: Is It Worth the Trip?",
     "description": "Plan a white water rafting day trip from Phuket to Phang Nga with local advice on routes, safety, timing, who should book, what to wear, and Phuket Rafting package options.",
-    "image": "https://phukettravel101.com/images/generated/phuket-white-water-rafting-hero.jpg",
+    "image": "https://pub-d7a7c52607b0453182010699e6e55dc7.r2.dev/images/generated/phuket-white-water-rafting-hero.jpg",
     "category": "Adventure Day Trip",
     "url": "phuket-white-water-rafting-guide.html",
     "date": "2026-05-10"
