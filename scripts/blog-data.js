@@ -1,5 +1,13 @@
 window.PHUKET_BLOGS = [
   {
+    "title": "What Phuket Locals Actually Do on Their Days Off",
+    "description": "A local-style guide to the kinds of days off Phuket people actually choose, from spa resets and Old Town creative sessions to karting, ziplining, and Bang Rong community experiences.",
+    "image": "https://pub-d7a7c52607b0453182010699e6e55dc7.r2.dev/images/generated/phuket-locals-days-off-hero.jpg",
+    "category": "Local Lifestyle",
+    "url": "what-phuket-locals-actually-do-on-their-days-off.html",
+    "date": "2026-05-14"
+  },
+  {
     "title": "White Water Rafting Near Phuket: Is It Worth the Trip?",
     "description": "Plan a white water rafting day trip from Phuket to Phang Nga with local advice on routes, safety, timing, who should book, what to wear, and Phuket Rafting package options.",
     "image": "https://pub-d7a7c52607b0453182010699e6e55dc7.r2.dev/images/generated/phuket-white-water-rafting-hero.jpg",
