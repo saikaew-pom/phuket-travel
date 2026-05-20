@@ -1,5 +1,13 @@
 window.PHUKET_BLOGS = [
   {
+    "title": "Best Surfing Beaches in Phuket",
+    "description": "Find the best surfing beaches in Phuket with honest local advice on Kata, Kalim, Nai Harn, Surin, Bang Tao, and Kamala, plus surf season, safety, and where beginners should start.",
+    "image": "https://phukettravel101.com/images/beach-kata-optimized.jpg",
+    "category": "Surf Guide",
+    "url": "best-surfing-beaches-phuket.html",
+    "date": "2026-05-20"
+  },
+  {
     "title": "What Phuket Locals Actually Do on Their Days Off",
     "description": "A local-style guide to the kinds of days off Phuket people actually choose, from spa resets and Old Town creative sessions to karting, ziplining, and Bang Rong community experiences.",
     "image": "https://pub-d7a7c52607b0453182010699e6e55dc7.r2.dev/images/generated/phuket-locals-days-off-hero.jpg",
